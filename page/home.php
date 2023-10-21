@@ -10,7 +10,7 @@
                             <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Best Online Studies</h5>
                             <h1 class="display-3 text-white animated slideInDown">The Online Reading Comprehension Learning Platform</h1>
                             <!-- <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p> -->
-                            <a href="" class="btn btn-primary py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                            <a href="login" class="btn btn-primary py-md-3 px-md-5 animated slideInRight">Join Now</a>
                         </div>
                     </div>
                 </div>
