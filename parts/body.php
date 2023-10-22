@@ -19,7 +19,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Online learning platform</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Perfect place to learn more anywhere</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="login" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Online learning platform</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Get Educated Online From Your Home</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Vero elitr justo clita lorem. Ipsum dolor at sed stet sit diam no. Kasd rebum ipsum et diam justo clita et kasd rebum sea sanctus eirmod elitr.</p>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="login" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
     <!-- Carousel End -->
 
     <!-- About Start -->
-    <div class="container-xxl py-5">
+    <div id="about" class="container-xxl py-5">
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
