@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="app/css/vertical-layout-light/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="app/images/favicon.png" />
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <?php
@@ -24,12 +26,13 @@ require_once "parts/login-header.php";
 ?>
 
 <style>
-  .container-fluid{
+  .container-fluid {
     margin: 0;
     padding: 0;
   }
-  .content-wrapper{
-    background: linear-gradient(to right,#87CEFA, #FAFAD2);
+
+  .content-wrapper {
+    background: linear-gradient(to right, #87CEFA, #FAFAD2);
   }
 </style>
 
@@ -69,6 +72,11 @@ require_once "parts/login-header.php";
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+
+  <script>
+
+  </script>
+
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="app/vendors/js/vendor.bundle.base.js"></script>
