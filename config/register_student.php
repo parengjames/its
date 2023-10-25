@@ -13,7 +13,6 @@
         $lastname = ucwords($_POST['lastname']);
         $gender = $_POST['gender'];
 
-
         // checking input, if empty, invalid or password not match........
         if($email === ""){
             header("location: ../register.php?error=Email address cannot be empty, try again!");
@@ -33,16 +32,21 @@
             header("location: ../register.php?error=Please select your gender.");
         }
         else{
-            
-        $password = password_hash($confirmpassword,PASSWORD_BCRYPT);
-        $query = mysqli_query($con,"INSERT INTO `users`(`firstname`, `lastname`, `role_id`, `gender`, `email_address`, `username`, `password`) 
-        VALUES ('".$firstname."','".$lastname."','".$role."','".$gender."','".$email."','".$username."','".$password."')");
-        
-        header("location: ../register.php?status=good");
-
+            // checking if username is not use already. 
+            $sqlquery = "SELECT * FROM users WHERE username='$username'";
+            $result = mysqli_query($con,$sqlquery);
+            if (mysqli_num_rows($result) === 1) {
+                header("location:../register.php?error=Username is not available, Please Enter unique username");
+            }
+            // all goods.......data will saved to database.......
+            else{
+                $password = password_hash($confirmpassword,PASSWORD_BCRYPT);
+                $query = mysqli_query($con,"INSERT INTO `users`(`firstname`, `lastname`, `role`, `gender`, `email_address`, `username`, `password`) 
+                VALUES ('".$firstname."','".$lastname."','".$role."','".$gender."','".$email."','".$username."','".$password."')");
+                
+                header("location: ../register.php?status=good");
+            }
         }
     }else{
         header("location: ../register.php?failed=0");
     }
-
-?>

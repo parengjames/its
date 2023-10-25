@@ -1,9 +1,15 @@
 RewriteEngine On # Turn on the rewriting engine
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
-#RewriteRule ^index/?$ index.php [NC,L]
+RewriteRule ^index/?$ index.php [NC,L]
 #admin
 
+RewriteRule ^dashboard/?$ index.php?page=_dashboard [NC,L]
+RewriteRule ^about/?$ index.php?page=_about [NC,L]
+RewriteRule ^course/?$ index.php?page=_course [NC,L]
+RewriteRule ^students/?$ index.php?page=_students [NC,L]
 #users
-RewriteRule ^index/?$ index.php [NC,L]
+
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]
+#RewriteRule ^index/([0-9]+)/([0-9a-zA-Z_-]+) index.php?page=$1 [NC]
+RewriteRule ^index/([0-9a-zA-Z_-]+) index.php?page=$1 [NC]
