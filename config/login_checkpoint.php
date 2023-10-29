@@ -38,23 +38,42 @@ if(isset($_POST['username']) && isset($_POST['password'])){
             if($rows['username'] === $uname){
                 //validating password over hash.........
                 if(password_verify($password,$rows['password'])){
-                    $_SESSION['loggedin'] = true;
-                    $_SESSION['user_id'] = $rows['user_id'];
-                    $_SESSION['username'] = $rows['username'];
-                    $_SESSION['login_role'] = $rows['role'];
+                    if($rows['role'] == 1){
+                        $_SESSION['loggedin'] = true;
+                        $_SESSION['user_id'] = $rows['user_id'];
+                        $_SESSION['username'] = $rows['username'];
+                        $_SESSION['login_role'] = $rows['role'];
+    
+                        $login = "login";
+                        $logvalue = 1;
+                        //saving login logs to db.......
+                        $sqlquery1 = mysqli_query($con,"INSERT INTO `action_logs`(`user_id`, `log_name`, `log_value`) 
+                        VALUES ('".$rows['user_id']."','".$login."','".$logvalue."')");
+    
+                        header("location:../app/index");
+                    }
+                    else if($rows['user_status'] == "Approved"){
+                        $_SESSION['loggedin'] = true;
+                        $_SESSION['user_id'] = $rows['user_id'];
+                        $_SESSION['username'] = $rows['username'];
+                        $_SESSION['login_role'] = $rows['role'];
+    
+                        $login = "login";
+                        $logvalue = 1;
+                        //saving login logs to db.......
+                        $sqlquery1 = mysqli_query($con,"INSERT INTO `action_logs`(`user_id`, `log_name`, `log_value`) 
+                        VALUES ('".$rows['user_id']."','".$login."','".$logvalue."')");
+    
+                        header("location:../app/index");
+                    }else{
+                        header("location:../login.php?return=Account is waiting to be Approved by admin");
+                    }
 
-                    $login = "login";
-                    $logvalue = 1;
-                    //saving login logs to db.......
-                    $sqlquery1 = mysqli_query($con,"INSERT INTO `action_logs`(`user_id`, `log_name`, `log_value`) 
-                    VALUES ('".$rows['user_id']."','".$login."','".$logvalue."')");
-
-                    header("location:../app/index");
                 }else{
                     header("location:../login.php?return=Try again, Username or Password is incorrect");
                 }
             }else{
-                header("location:../login.php?return=Try again, Username or Password is incorrect");
+                header("location:../login.php?return=Username or Password is incorrect");
             }
         }
         else{
@@ -62,5 +81,3 @@ if(isset($_POST['username']) && isset($_POST['password'])){
         }
     }
 }
-
-?>

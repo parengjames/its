@@ -44,7 +44,7 @@ require_once "parts/login-header.php";
 <body>
 
   <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
+    <div class="container-fluid page-body-wrapper">
       <div class="content-wrapper d-flex align-items-center auth ">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">

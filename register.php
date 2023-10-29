@@ -35,13 +35,6 @@ require_once "parts/register-header.php";
     background: linear-gradient(to right, #87CEFA, #FAFAD2);
   }
 
-  .box {
-    border-radius: 5px;
-    height: 620px;
-    overflow-y: auto;
-    margin-top: -45px;
-  }
-
   .alert {
     margin-bottom: 50px;
   }
@@ -49,9 +42,9 @@ require_once "parts/register-header.php";
 
 <body>
   <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth px-0">
-        <div class="row w-100 mx-0">
+    <div class="container-fluid page-body-wrapper">
+      <div style="margin-top: -40px;" class="content-wrapper d-flex align-items-center auth px-0">
+        <div class="row">
           <div class="col-lg-4 mx-auto">
             <!-- Error alert -------------------------- -->
             <?php
@@ -66,51 +59,62 @@ require_once "parts/register-header.php";
             ?>
             <!-- Error alert -------------------------- -->
             <!-- The card here............. -->
-            <div class="box auth-form-light text-left py-5 px-4 px-sm-5">
+            <div style="width: 1000px;min-width: 500px;" class="box auth-form-light text-left py-4 px-4 px-sm-5">
               <h4>New here?</h4>
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
               <form action="config/register_student.php" method="POST" class="pt-3">
-                <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="emailadd" name="email" placeholder="Email address">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="username" name="Username" placeholder="Username">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="pass" name="password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="confpass" name="confirmpassword" placeholder="Confirm password">
-                </div>
-                <h6 class="font-weight-medium">Personal Information</h6>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="firstname" name="firstname" placeholder="Firstname">
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-lg" id="lastname" name="lastname" placeholder="Lastname">
-                </div>
-                <div class="form-group">
-                  <select class="form-control form-control-lg" id="gender" name="gender">
-                    <option>---Select your gender---</option>
-                    <option>Female</option>
-                    <option>Male</option>
-                    <option>Rather not say</option>
-                  </select>
-                </div>
-                <!-- <div class="mb-4">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      I agree to all Terms & Conditions
-                    </label>
+                <div style="margin-bottom: -40px;" class="row">
+                  <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h6 class="font-weight-medium">Set up account</h6>
+                        <div class="form-group">
+                          <input type="email" class="form-control form-control-lg" id="emailadd" name="email" placeholder="Email address" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-lg" id="username" name="Username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control form-control-lg" id="pass" name="password" placeholder="Password (Must be more than 6 characters.)" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control form-control-lg" id="confpass" name="confirmpassword" placeholder="Confirm password" required>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div> -->
+                  <div class="col-md-6 grid-margin stretch-card">
+                    <div class="card">
+                      <div class="card-body">
+                        <h6 class="font-weight-medium">Personal Information</h6>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-lg" id="firstname" name="firstname" placeholder="Firstname" required>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-lg" id="lastname" name="lastname" placeholder="Lastname" required>
+                        </div>
+                        <div class="form-group">
+                          <h6 class="font-weight-medium">Birth Date</h6>
+                          <input type="date" class="form-control form-control-lg" id="birthdate" name="birthdate" placeholder="Birthdate" required>
+                        </div>
+                        <div class="form-group">
+                          <select class="form-control form-control-lg" id="gender" name="gender" required>
+                            <option>---Select your gender---</option>
+                            <option>Female</option>
+                            <option>Male</option>
+                            <option>Rather not say</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div class="mt-3">
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" name="submit">SIGN UP</button>
                 </div>
-            </div>
-            <div class="text-center mt-2 font-weight-light">
-              Already have an account? <a href="login" class="text-primary">Login</a>
+                <div class="text-center mt-2 font-weight-light">
+                  Already have an account? <a href="login" class="text-primary">Login</a>
+                </div>
             </div>
             </form>
           </div>
@@ -145,7 +149,7 @@ require_once "parts/register-header.php";
       })
     </script>
   <?php
-  // failed
+    // failed
   } else if (isset($_GET['failed'])) {
   ?>
     <script>
