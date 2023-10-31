@@ -24,12 +24,6 @@
     }
 </style>
 
-<!-- datatables  -->
-<link rel="stylesheet" href="vendors/DataTables/jquery.dataTables.min.css">
-<link rel="stylesheet" href="vendors/DataTables/datatables.min.css">
-<script src="vendors/DataTables/jquery-3.7.0.js"></script>
-<script src="vendors/DataTables/jquery.dataTables.min.js"></script>
-
 <div class="content-wrapper">
     <div class="row">
         <div class="tabform col-lg-12 grid-margin stretch-card">
@@ -501,8 +495,6 @@
 </div>
 
 <script src="actions/js/user_transaction.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 
 <script>
     $(document).ready(function() {
