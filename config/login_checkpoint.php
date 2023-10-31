@@ -66,14 +66,14 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     
                         header("location:../app/index");
                     }else{
-                        header("location:../login.php?return=Account is waiting to be Approved by admin");
+                        header("location:../login.php?return=The account is pending approval from the administrator.");
                     }
 
                 }else{
-                    header("location:../login.php?return=Try again, Username or Password is incorrect");
+                    header("location:../login.php?return=The username or password entered is incorrect.");
                 }
             }else{
-                header("location:../login.php?return=Username or Password is incorrect");
+                header("location:../login.php?return=Username or Password entered is incorrect");
             }
         }
         else{

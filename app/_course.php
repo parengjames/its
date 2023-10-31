@@ -22,25 +22,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="col-md-12 grid-margin">
-                        <div style="margin-bottom: -60px;" class="row">
+                        <div style="margin-bottom: -30px;" class="row">
                             <div class="col-12 col-xl-8 mb-xl-0">
                                 <h3 class="font-weight-bold">Manage Course</h3>
-                            </div>
-                            <div class="col-12 col-xl-4">
-                                <div class="justify-content-end d-flex">
-                                    <div style="margin-top: -20px;" class="form-group">
-                                        <form action="" method="POST">
-                                            <ul>
-                                                <li>
-                                                    <input style="width: 300px;" type="text" name="search" class="form-control form-control-sm" placeholder="Search Course here..." aria-label="Search Course here...">
-                                                </li>
-                                                <li>
-                                                    <button type="submit" name="submit_search" style="margin-left: -5px;border-radius: 5px;color: white; height:41px;" class="btn btn-secondary">Search</button>
-                                                </li>
-                                            </ul>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>

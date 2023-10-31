@@ -90,7 +90,8 @@
                                 $sqlquery_result = mysqli_num_rows($sqlquery);
                                 if ($sqlquery_result > 0) {
                                     while ($row = mysqli_fetch_assoc($sqlquery)) {
-                                        $datebirth = date("m-d-Y",strtotime($row['Birthday']))
+                                        $datebirth = date("m-d-Y", strtotime($row['Birthday']));
+                                        $_user_id = $row['user_id'];
                                 ?>
                                         <tr>
                                             <td><?php echo $number++ ?></td>
@@ -114,13 +115,13 @@
                                                 ?>
                                             </td>
                                             <td>
-                                                <button data-whatever="<?php echo $row['user_id'] ?>" id="icon_button" type="button" title="Change status" data-toggle="modal" data-target="#statusmodal" class="btn btn-rounded btn-outline-info btn-icon">
+                                                <button data-whatever="<?php echo $_user_id ?>" id="icon_button" type="button" title="Change status" data-toggle="modal" data-target="#statusmodal" class="btn btn-rounded btn-outline-info btn-icon">
                                                     <i class="ti-check-box"></i>
                                                 </button>
-                                                <button type="button" data-toggle="modal" data-target="#updateModal" id="icon_button" title="Update Info" class="btn btn-rounded btn-outline-info btn-icon">
+                                                <button data-whatever="<?php echo $row['user_id'] ?>" data-email="<?php echo $row['email_address'] ?>" data-role="<?php echo $row['role'] ?>" data-birthdate="<?php echo $row['Birthday'] ?>" data-firstname="<?php echo $row['firstname'] ?>" data-lastname="<?php echo $row['lastname'] ?>" data-gender="<?php echo $row['gender'] ?>" type="button" data-toggle="modal" data-target="#user_update_modal" id="icon_button" title="Update Info" class="btn btn-rounded btn-outline-info btn-icon">
                                                     <i class="ti-pencil-alt"></i>
                                                 </button>
-                                                <button data-toggle="modal" data-target="#exampleModal" id="icon_button" type="button" title="Delete student" class="btn btn-rounded btn-outline-danger btn-icon">
+                                                <button data-whatever="<?php echo $_user_id ?>" data-toggle="modal" data-target="#user_delete_modal" id="icon_button" type="button" title="Delete student" class="btn btn-rounded btn-outline-danger btn-icon">
                                                     <i class="ti-trash"></i>
                                                 </button>
                                             </td>
@@ -144,8 +145,30 @@
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="actions/js/modal_user.js"></script>
+<!-- Delete Modal -->
+<div class="modal fade" id="user_delete_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLongTitle">Delete Student</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form action="actions/user_delete.php" method="POST">
+                    <div class="modal-body">
+                    <h6>Note that after delete, data will no longer available forever.</h6>
+                        <input type="hidden" name="id" class="form-control" id="id" aria-hidden="true">
+                    </div>
+            
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                <button type="submit" name="submit" value="approve" class="btn btn-warning">Delete</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <!-- approved Modal -->
 <div class="modal fade" id="statusmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -157,7 +180,9 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <form action="actions/status_change.php" method="POST">
-                    <input type="hidden" name="id" class="form-control" id="user-id" aria-hidden="true">
+                    <!-- <div class="modal-body"> -->
+                        <input type="hidden" name="id" class="form-control" id="id" aria-hidden="true">
+                    <!-- </div> -->
             </div>
             <div class="modal-footer">
                 <button type="submit" name="submit" value="restrict" class="btn btn-outline-primary">Restrict</button>
@@ -169,7 +194,7 @@
 </div>
 
 <!-- Update student info Modal -->
-<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="user_update_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="max-width: 900px;" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -187,19 +212,20 @@
                                     <h6 class="font-weight-medium">Update account</h6>
                                     <input type="hidden" name="id" class="form-control" id="user-id" aria-hidden="true">
                                     <div class="form-group">
-                                        <input type="email" class="form-control form-control-lg" id="emailadd" name="email" placeholder="Email address" required>
+                                        <input type="email" class="form-control form-control-lg" id="emailadd" name="email" placeholder="Email address">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-lg" id="pass" name="password" placeholder="Password (must be more than 6 characters)" required>
+                                        <input type="password" class="form-control form-control-lg" id="pass" name="password" placeholder="Password (must be more than 6 characters)">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-lg" id="confpass" name="confirmpassword" placeholder="Confirm password" required>
+                                        <input type="password" class="form-control form-control-lg" id="confpass" name="confirmpassword" placeholder="Confirm password">
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-control form-control-lg" id="privilege" name="Privilege" required>
+                                        <h6 class="font-weight-medium">Privilege:</h6>
+                                        <select class="form-control form-control-lg" id="privilege" name="Privilege">
                                             <option>---Select Privilege---</option>
-                                            <option>Admin</option>
-                                            <option>Student</option>
+                                            <option value="1">Admin</option>
+                                            <option value="2">Student</option>
                                         </select>
                                     </div>
                                 </div>
@@ -210,17 +236,18 @@
                                 <div class="card-body">
                                     <h6 class="font-weight-medium">Personal Information</h6>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" id="firstname" name="Firstname" placeholder="Firstname" required>
+                                        <input type="text" class="form-control form-control-lg" id="firstname" name="Firstname" placeholder="Firstname">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-lg" id="lastname" name="Lastname" placeholder="Lastname" required>
+                                        <input type="text" class="form-control form-control-lg" id="lastname" name="Lastname" placeholder="Lastname">
                                     </div>
                                     <div class="form-group">
                                         <h6 class="font-weight-medium">Birth Date:</h6>
-                                        <input type="date" class="form-control form-control-lg" id="birthdate" name="Birthdate" placeholder="Birthdate" required>
+                                        <input type="date" class="form-control form-control-lg" id="birthdate" name="Birthdate" placeholder="Birthdate">
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-control form-control-lg" id="gender" name="Gender" required>
+                                        <h6 class="font-weight-medium">Gender:</h6>
+                                        <select class="form-control form-control-lg" id="gender" name="Gender">
                                             <option>---Select your gender---</option>
                                             <option>Female</option>
                                             <option>Male</option>
@@ -392,6 +419,12 @@
     </div>
 </div>
 
+<!-- <script>
+</script>
+<script>
+
+</script> -->
+
 <!-- add student modal -->
 <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" style="width: 900px;" role="document">
@@ -467,6 +500,10 @@
     </div>
 </div>
 
+<script src="actions/js/user_transaction.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 <script>
     $(document).ready(function() {
         new DataTable('#studentTable')
@@ -481,7 +518,7 @@ if (isset($_GET['status'])) {
             toast: true,
             position: 'top-end',
             showConfirmButton: false,
-            timer: 3000,
+            timer: 2000,
             timerProgressBar: true,
             showCloseButton: true,
             didOpen: (toast) => {
