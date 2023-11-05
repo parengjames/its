@@ -8,6 +8,8 @@ RewriteRule ^dashboard/?$ index.php?page=_dashboard [NC,L]
 RewriteRule ^about/?$ index.php?page=_about [NC,L]
 RewriteRule ^course/?$ index.php?page=_course [NC,L]
 RewriteRule ^students/?$ index.php?page=_students [NC,L]
+RewriteRule ^lessons/?$ index.php?page=_lessons [NC,L]
+RewriteRule ^lessons_add/?$ index.php?page=_lessons_add [NC,L]
 #users
 
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]

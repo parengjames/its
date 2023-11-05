@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>eLearning Admin</title>
+
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/feather/feather.css">
     <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
@@ -21,6 +22,14 @@
     <!-- endinject -->
     <link rel="shortcut icon" href="../img/favicon.ico" />
 
+    <!-- ckeditor plugin -->
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/40.0.0/classic/ckeditor.js"></script> -->
+    <!-- <script src="https://cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script> -->
+    <!-- include summernote css/js -->
+
+
+    <script src="vendors/ckeditor5/ckeditor.js"></script>
+
     <!-- datatables  -->
     <link rel="stylesheet" href="vendors/DataTables/jquery.dataTables.min.css">
     <link rel="stylesheet" href="vendors/DataTables/datatables.min.css">
@@ -29,7 +38,37 @@
 
     <!-- sweet alert cdn -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- rich text editor -->
+    <link rel="stylesheet" href="richtexteditor/richtexteditor/rte_theme_default.css">
+    <script src="richtexteditor/richtexteditor/rte.js"></script>
+    <script src="richtexteditor/richtexteditor/plugins/all_plugins.js"></script>
 </head>
+<style>
+    #btn {
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid #4B49AC;
+        border-radius: 8px;
+        padding: 10px 10px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul li {
+        float: inline-start;
+    }
+
+    #icon_button i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        font-size: 18px;
+    }
+</style>
 
 <body>
 

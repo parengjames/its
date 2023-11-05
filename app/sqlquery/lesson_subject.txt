@@ -1,0 +1,3 @@
+SELECT lesson.lesson_title,lesson.lesson_description,lesson.lesson_status,lesson.lesson_note,subject.subject_name 
+FROM lesson
+LEFT JOIN subject ON lesson.subject_id = subject.subject_id

@@ -1,28 +1,3 @@
-<style>
-    #btn {
-        font-size: 14px;
-        font-weight: bold;
-        border: 1px solid #4B49AC;
-        border-radius: 8px;
-        padding: 10px 10px;
-    }
-
-    ul {
-        list-style-type: none;
-    }
-
-    ul li {
-        float: inline-start;
-    }
-
-    #icon_button i {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-        font-size: 18px;
-    }
-</style>
 
 <div class="content-wrapper">
     <div class="row">

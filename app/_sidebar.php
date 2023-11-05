@@ -16,6 +16,8 @@
       <div class="collapse" id="form-elements">
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"><a class="nav-link" href="course">Manage Course</a></li>
+          <li class="nav-item"><a class="nav-link" href="lessons">Manage Lesson</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Manage Activities</a></li>
         </ul>
       </div>
     </li>

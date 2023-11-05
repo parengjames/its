@@ -43,5 +43,5 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
       <!-- partial:partials/_footer.html -->
-      <?php include('_footer.php') ?>
+
       <?php include('_scripts.php') ?>
