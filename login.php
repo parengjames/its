@@ -33,12 +33,7 @@ require_once "parts/login-header.php";
 
   .content-wrapper {
     background: linear-gradient(to right, #87CEFA, #FAFAD2);
-  }
-
-  .alert {
-    margin-bottom: 100px;
-    margin-top: -130px;
-  }
+  } 
 </style>
 
 <body>
@@ -48,25 +43,6 @@ require_once "parts/login-header.php";
       <div class="content-wrapper d-flex align-items-center auth ">
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
-            <!-- Error alert -------------------------- -->
-            <?php
-            if (isset($_GET['error']) != null) {
-              echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                      ' . $_GET['error'] . '
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                  </div>';
-            } else if (isset($_GET['return']) != null) {
-              echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        ' . $_GET['return'] . '
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>';
-            }
-            ?>
-            <!-- Error alert -------------------------- -->
             <div style="margin-top: -90px;" class="auth-form-light text-left py-5 px-4 px-sm-5">
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
@@ -76,6 +52,27 @@ require_once "parts/login-header.php";
                 </div>
                 <div class="form-group">
                   <input name="password" type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-group">
+                  <!-- Error alert -------------------------- -->
+                  <?php
+                  if (isset($_GET['error']) != null) {
+                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      ' . $_GET['error'] . '
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>';
+                  } else if (isset($_GET['return']) != null) {
+                    echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        ' . $_GET['return'] . '
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>';
+                  }
+                  ?>
+                  <!-- Error alert -------------------------- -->
                 </div>
                 <div class="mt-3">
                   <button name="submit" type="submit" style="font-size: 18px;" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="">SIGN IN</button>

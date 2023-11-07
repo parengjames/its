@@ -100,7 +100,15 @@
                                 } else {
                                     ?>
                                     <tr>
-                                        <td colspan="8">NO DATA FOUND</td>
+                                        <td style="text-align: center;" colspan="9">NO DATA FOUND</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                     </tr>
                                 <?php
                                 }

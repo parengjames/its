@@ -23,7 +23,7 @@
                         }
                     ?>
                         <div class="form-group">
-                            <label for="">Lesson id</label>
+                            <label for="">Course ID</label>
                             <input type="hidden" value="<?php echo $_GET['course'] ?>" class="form-control" name="lesson_id" id="lesson_id">
                             <input type="text" disabled value="<?php echo $course_name ?>" class="form-control">
                         </div>
@@ -31,11 +31,26 @@
                     } else {
                     ?>
                         <div class="form-group">
-                            <label>Lesson id</label>
+                            <label>Course ID</label>
                             <select class="form-control" name="lesson_id" id="lesson_id">
                                 <option></option>
+                                <?php
+                                $_sqlquery = mysqli_query($con, "SELECT * FROM `subject`");
+                                $_result = mysqli_num_rows($_sqlquery);
+                                if ($_result > 0) {
+                                    while ($row = mysqli_fetch_assoc($_sqlquery)) {
+                                        $subject_id = $row['subject_id'];
+                                        $subject_name = $row['subject_name'];
+                                ?>
+                                        <option value="<?php echo $subject_id ?>"><?php echo $subject_name ?></option>
+                                <?php
+                                    }
+                                } else {
+                                }
+                                ?>
                             </select>
                         </div>
+
                     <?php
                     } ?>
 
@@ -137,13 +152,13 @@
             </div>
         </div>
     </div>
-    <div id="uploadvideo" class="col-12 grid-margin stretch-card" >
+    <div id="uploadvideo" class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Insert Video file</h4>
                 <form class="forms-sample" action="actions/lesson_backend.php" method="POST" enctype="multipart/form-data">
 
-                <?php
+                    <?php
                     if (isset($_GET['error'])) {
                     ?>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">

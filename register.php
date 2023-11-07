@@ -33,6 +33,8 @@ require_once "parts/register-header.php";
 
   .content-wrapper {
     background: linear-gradient(to right, #87CEFA, #FAFAD2);
+    align-items: center;
+    justify-content: center;
   }
 
   .alert {
@@ -44,8 +46,57 @@ require_once "parts/register-header.php";
   <div class="container-scroller">
     <div class="container-fluid page-body-wrapper">
       <div style="margin-top: -40px;" class="content-wrapper d-flex align-items-center auth px-0">
-        <div class="row">
-          <div class="col-lg-4 mx-auto">
+        <!-- The card here............. -->
+        <div class="box auth-form-light text-left py-4 px-4 px-sm-5">
+          <h4>New here?</h4>
+          <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+          <form action="config/register_student.php" method="POST" class="pt-3">
+            <div style="margin-bottom: -40px;width: 1000px;" class="row">
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="font-weight-medium">Set up account</h6>
+                    <div class="form-group">
+                      <input type="email" class="form-control form-control-lg" id="emailadd" name="email" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-lg" id="username" name="Username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-lg" id="pass" name="password" placeholder="Password (Must be more than 6 characters.)" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="password" class="form-control form-control-lg" id="confpass" name="confirmpassword" placeholder="Confirm password" required>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="font-weight-medium">Personal Information</h6>
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-lg" id="firstname" name="firstname" placeholder="Firstname" required>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control form-control-lg" id="lastname" name="lastname" placeholder="Lastname" required>
+                    </div>
+                    <div class="form-group">
+                      <h6 class="font-weight-medium">Birth Date</h6>
+                      <input type="date" class="form-control form-control-lg" id="birthdate" name="birthdate" placeholder="Birthdate" required>
+                    </div>
+                    <div class="form-group">
+                      <select class="form-control form-control-lg" id="gender" name="gender" required>
+                        <option>---Select your gender---</option>
+                        <option>Female</option>
+                        <option>Male</option>
+                        <option>Rather not say</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Error alert -------------------------- -->
             <?php
             if (isset($_GET['error']) != null) {
@@ -58,67 +109,14 @@ require_once "parts/register-header.php";
             }
             ?>
             <!-- Error alert -------------------------- -->
-            <!-- The card here............. -->
-            <div style="width: 1000px;min-width: 500px;" class="box auth-form-light text-left py-4 px-4 px-sm-5">
-              <h4>New here?</h4>
-              <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-              <form action="config/register_student.php" method="POST" class="pt-3">
-                <div style="margin-bottom: -40px;" class="row">
-                  <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
-                        <h6 class="font-weight-medium">Set up account</h6>
-                        <div class="form-group">
-                          <input type="email" class="form-control form-control-lg" id="emailadd" name="email" placeholder="Email address" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-lg" id="username" name="Username" placeholder="Username" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="password" class="form-control form-control-lg" id="pass" name="password" placeholder="Password (Must be more than 6 characters.)" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="password" class="form-control form-control-lg" id="confpass" name="confirmpassword" placeholder="Confirm password" required>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-6 grid-margin stretch-card">
-                    <div class="card">
-                      <div class="card-body">
-                        <h6 class="font-weight-medium">Personal Information</h6>
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-lg" id="firstname" name="firstname" placeholder="Firstname" required>
-                        </div>
-                        <div class="form-group">
-                          <input type="text" class="form-control form-control-lg" id="lastname" name="lastname" placeholder="Lastname" required>
-                        </div>
-                        <div class="form-group">
-                          <h6 class="font-weight-medium">Birth Date</h6>
-                          <input type="date" class="form-control form-control-lg" id="birthdate" name="birthdate" placeholder="Birthdate" required>
-                        </div>
-                        <div class="form-group">
-                          <select class="form-control form-control-lg" id="gender" name="gender" required>
-                            <option>---Select your gender---</option>
-                            <option>Female</option>
-                            <option>Male</option>
-                            <option>Rather not say</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="mt-3">
-                  <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" name="submit">SIGN UP</button>
-                </div>
-                <div class="text-center mt-2 font-weight-light">
-                  Already have an account? <a href="login" class="text-primary">Login</a>
-                </div>
+            <div class="mt-3">
+              <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit" name="submit">SIGN UP</button>
             </div>
-            </form>
-          </div>
+            <div class="text-center mt-2 font-weight-light">
+              Already have an account? <a href="login" class="text-primary">Login</a>
+            </div>
         </div>
+        </form>
       </div>
     </div>
     <!-- content-wrapper ends -->

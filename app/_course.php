@@ -130,6 +130,14 @@
                                         </tr>
                                 <?php
                                     }
+                                }else{
+                                    ?>
+                                    <tr>
+                                        <td style="text-align: center;" colspan="3"></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <?php
                                 }
                                 ?>
                             </tbody>

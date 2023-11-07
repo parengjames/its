@@ -23,9 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location:../register.php?error=Confirm password not match.");
     }
     // checking name. letters only.
-    else if (!preg_match("/^[a-zA-z]*$/", $firstname) || !preg_match("/^[a-zA-z]*$/", $lastname)) {
-        header("location:../register.php?error=Alphabets and whitespance are only allowed for names");
-    }
+    // else if (!preg_match("/^[a-zA-z]*$/", $firstname) || !preg_match("/^[a-zA-z]*$/", $lastname)) {
+    //     header("location:../register.php?error=Alphabets and whitespance are only allowed for names");
+    // }
     // checking password.. it must more than 6 charaters
     else if ($pass_length < 6) {
         header("location:../register.php?error=Password must more than 6 characters");

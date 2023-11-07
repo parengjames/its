@@ -27,11 +27,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location: ../index.php?page=_students&status=return");
     }
     // checking name. letters only.
-    else if (!preg_match("/^[a-zA-z]*$/", $firstname) || !preg_match("/^[a-zA-z]*$/", $lastname)) {
-        $_SESSION['ico'] = "error";
-        $_SESSION['title'] = "Only Alphabets and whitespace are allowed for Names";
-        header("location: ../index.php?page=_students&status=return");
-    }
+    // else if (!preg_match("/^[a-zA-z]*$/", $firstname) || !preg_match("/^[a-zA-z]*$/", $lastname)) {
+    //     $_SESSION['ico'] = "error";
+    //     $_SESSION['title'] = "Only Alphabets and whitespace are allowed for Names";
+    //     header("location: ../index.php?page=_students&status=return");
+    // }
     // checking password.. it must more than 6 charaters
     else if($pass_length < 6){
         $_SESSION['ico'] = "error";

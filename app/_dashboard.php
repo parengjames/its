@@ -41,7 +41,7 @@
                 </a>
             </div>
             <div class="row">
-                <a style="text-decoration: none; cursor: pointer;" href="" class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
+                <a style="text-decoration: none; cursor: pointer;" href="lessons" class="col-md-6 mb-4 mb-lg-0 stretch-card transparent">
                     <div class="card card-light-blue">
                         <div class="card-body">
                             <p style="font-size: medium;" class="mb-4">Manage Lessons</p>
@@ -71,8 +71,8 @@
                                 <h2 class="mb-0 font-weight-normal"><i class="icon-sun mr-2"></i>31<sup>C</sup></h2>
                             </div>
                             <div class="ml-2">
-                                <h4 class="location font-weight-normal">Bangalore</h4>
-                                <h6 class="font-weight-normal">India</h6>
+                                <h4 class="location font-weight-normal">Digos City</h4>
+                                <h6 class="font-weight-normal">Philippines</h6>
                             </div>
                         </div>
                     </div>
