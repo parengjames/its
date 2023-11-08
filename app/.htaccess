@@ -12,6 +12,7 @@ RewriteRule ^lessons/?$ index.php?page=_lessons [NC,L]
 RewriteRule ^lessons_add/?$ index.php?page=_lessons_add [NC,L]
 RewriteRule ^materials/?$ index.php?page=_materials [NC,L]
 RewriteRule ^view_materials/?$ index.php?page=_view_materials [NC,L]
+RewriteRule ^activities/?$ index.php?page=_activities [NC,L]
 #users
 
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]

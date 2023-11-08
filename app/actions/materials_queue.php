@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($_deletesql) {
                         //true
                         $_SESSION['ico'] = 'success';
-                        $_SESSION['title'] = "'".$pdf_name."' deleted successfully";
+                        $_SESSION['title'] = "'" . $pdf_name . "' deleted successfully";
                         header("location: ../index.php?page=_materials&lesson=$_lessonID&status=success");
                     }
                 }
@@ -51,13 +51,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($_deletesql) {
                         //true
                         $_SESSION['ico'] = 'success';
-                        $_SESSION['title'] = "'".$video_name."'Deleted successfully";
+                        $_SESSION['title'] = "'" . $video_name . "'Deleted successfully";
                         header("location: ../index.php?page=_materials&lesson=$_lessonID&status=success");
                     }
                 }
             }
         } else {
             echo "no data found";
+        }
+    } else if (isset($_POST['delete_content'])) {
+
+        if (isset($_POST['content_id'])) {
+            $content = $_POST['content_id'];
+            $_lessonID = $_SESSION['l_id'];
+
+            $_sqlqueryyy = mysqli_query($con, "DELETE FROM `lesson_content` WHERE `content_id`=$content");
+            $_SESSION['ico'] = 'success';
+            $_SESSION['title'] = "Content deleted successfully";
+            header("location: ../index.php?page=_materials&lesson=$_lessonID&status=success");
+        } else {
+            $_SESSION['ico'] = 'error';
+            $_SESSION['title'] = "Failed, error in deletion.";
+            header("location: ../index.php?page=_materials&lesson=$_lessonID&status=failed");
         }
     }
 }

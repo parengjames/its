@@ -17,7 +17,7 @@
         <ul class="nav flex-column sub-menu">
           <li class="nav-item"><a class="nav-link" href="course">Manage Course</a></li>
           <li class="nav-item"><a class="nav-link" href="lessons">Manage Lesson</a></li>
-          <li class="nav-item"><a class="nav-link" href="">Manage Activities</a></li>
+          <li class="nav-item"><a class="nav-link" href="activities">Manage Activities</a></li>
         </ul>
       </div>
     </li>
@@ -35,11 +35,11 @@
       </div>
     </li>
 
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <a class="nav-link" href="about">
         <i class="icon-paper menu-icon"></i>
         <span class="menu-title">About</span>
       </a>
     </li>
-  </ul>
+  </ul> -->
 </nav>

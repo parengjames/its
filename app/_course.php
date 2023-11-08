@@ -218,5 +218,7 @@ if (isset($_GET['status'])) {
 
 <?php
     unset($_GET['status']);
+    unset($_SESSION['ico']);
+    unset($_SESSION['title']);
 }
 ?>

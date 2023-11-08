@@ -50,7 +50,7 @@
                         </div>
                     </div>
                 </a>
-                <a style="text-decoration: none; cursor: pointer;" href="" class="col-md-6 stretch-card transparent">
+                <a style="text-decoration: none; cursor: pointer;" href="activities" class="col-md-6 stretch-card transparent">
                     <div class="card card-light-danger">
                         <div class="card-body">
                             <p style="font-size: medium;"  class="mb-4">Manage Activities</p>

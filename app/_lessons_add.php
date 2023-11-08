@@ -62,14 +62,11 @@
                         <label for="desc">Description</label>
                         <textarea style="resize: vertical;" type="text" class="form-control" name="description" id="desc" rows="2"></textarea>
                     </div>
-                    <label for="lesson_materials">Lesson Content</label>
-                    <textarea id="lesson_materials" name="lesson_materials" class="form-group"></textarea>
-                    <br>
                     <div class="form-group">
                         <label for="status">Lesson status</label>
                         <select class="form-control" name="status" id="status">
                             <option></option>
-                            <option value="Partial">Partial</option>
+                            <option value="Partial" selected>Partial</option>
                             <option value="Available">Available</option>
                             <option value="Unavailable">Unavailable</option>
                         </select>
@@ -82,6 +79,69 @@
             </div>
         </div>
     </div>
+
+    <div id="uploadcontent" class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Upload lesson content</h4>
+                <form class="forms-sample" action="actions/lesson_backend.php" method="POST">
+                    <div class="form-group">
+                        <label>Lesson id</label>
+                        <select class="form-control" name="lesson_id" id="lesson_id">
+                            <option value=""></option>
+                            <?php
+                            $_query = mysqli_query($con, "SELECT * FROM `lesson`");
+                            $_result = mysqli_num_rows($_query);
+                            if ($_result > 0) {
+                                while ($row = mysqli_fetch_assoc($_query)) {
+                                    $lesson_title = $row['lesson_title'];
+                                    $lesson_id = $row['lesson_id'];
+                            ?>
+                                    <option value="<?php echo $lesson_id ?>"><?php echo $lesson_title; ?></option>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Number order</label>
+                        <input type="number" class="form-control" name="number" id="number">
+                    </div>
+                    <div class="form-group">
+                        <label for="lesson_materials">Lesson Content</label>
+                        <textarea id="lesson_materials" name="lesson_materials" class="form-group"></textarea>
+                    </div>
+                    <?php
+                    if (isset($_GET['deny'])) {
+                    ?>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <?php echo $_SESSION['text'] ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php
+                    } else if (isset($_GET['give'])) {
+                    ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <?php echo $_SESSION['text'] ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                    <div class="form-group mt-3">
+                        <button type="submit" name="add_content" class="btn btn-primary mr-2">Submit</button>
+                        <a href="lessons_add#uploadcontent"><button type="button" name="reset" class="btn btn-light">Reset</button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div id="uploadpdf" class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
@@ -258,6 +318,8 @@ if (isset($_GET['status'])) {
 
 <?php
     unset($_GET['status']);
+    unset($_SESSION['ico']);
+    unset($_SESSION['title']);
 }
 ?>
 

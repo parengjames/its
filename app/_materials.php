@@ -13,6 +13,85 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
+                    <p class="card-title">Lesson content</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="materials_table" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Lesson name</th>
+                                            <th>Date uploaded</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        if (isset($_GET['lesson'])) {
+                                            $number = 1;
+                                            $_sqlquery = mysqli_query($con, "SELECT lesson.*, lesson_content.*
+                                                FROM lesson_content
+                                                LEFT JOIN lesson ON lesson_content.lesson_id = lesson.lesson_id
+                                                WHERE lesson.lesson_id = '" . $_GET['lesson'] . "'");
+                                            $result = mysqli_num_rows($_sqlquery);
+                                            if ($result > 0) {
+                                                while ($row = mysqli_fetch_assoc($_sqlquery)) {
+                                                    $_SESSION['l_id'] = $row['lesson_id'];
+                                        ?>
+                                                    <tr>
+                                                        <td><?php echo $number++ ?></td>
+                                                        <td><?php echo $row['lesson_title'] ?></td>
+                                                        <td><?php echo date('F d Y, h:i:s A', strtotime($row['content_date_added'])) ?></td>
+                                                        <td>
+                                                            <a href="index.php?page=_view_materials&content=<?php echo $row['content_id'] ?>">
+                                                                <button id="icon_button" type="button" title="View PDF" class="btn btn-rounded btn-outline-info btn-icon">
+                                                                    <i class="ti-eye"></i>
+                                                                </button>
+                                                            </a>
+                                                            <button data-whatever="<?php echo $row['content_id'] ?>" data-toggle="modal" data-target="#content_delete_modal" id="icon_button" type="button" title="Delete PDF" class="btn btn-rounded btn-outline-danger btn-icon">
+                                                                <i class="ti-trash"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                            } else {
+                                                ?>
+                                                <tr>
+                                                    <td colspan="4">NO DATA FOUND</td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            <?php
+                                            }
+                                        } else {
+                                            ?>
+                                            <tr>
+                                                <td colspan="4">System cannot find the lesson ID</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        <?php
+                                        }
+
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: -10px;" class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
                     <p class="card-title">PDF files</p>
                     <div class="row">
                         <div class="col-12">
@@ -177,6 +256,45 @@
     </div>
 </div>
 
+<!-- Delete content Modal -->
+<div class="modal fade" id="content_delete_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="exampleModalLongTitle">Delete Content file</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="actions/materials_queue.php" method="POST">
+                <div class="modal-body">
+                    <h6>Note that after delete, data will no longer available forever.</h6>
+                    <input type="hidden" name="content_id" class="form-control" id="id" aria-hidden="true">
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-secondary">Cancel</button>
+                    <button type="submit" name="delete_content" value="approve" class="btn btn-warning">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- transfer data to modal -->
+<script>
+    $(document).ready(function() {
+        $('#content_delete_modal').on('show.bs.modal', function(event) {
+            var button = $(event.relatedTarget);
+            var id = button.data('whatever')
+
+            var modal = $(this)
+            modal.find('#id').val(id)
+        })
+    })
+</script>
+
+
 <!-- Delete pdf Modal -->
 <div class="modal fade" id="pdf_delete_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -293,5 +411,7 @@ if (isset($_GET['status'])) {
 
 <?php
     unset($_GET['status']);
+    unset($_SESSION['ico']);
+    unset($_SESSION['title']);
 }
 ?>

@@ -11,7 +11,7 @@
                             <div class="col-12 col-xl-4">
                                 <div class="justify-content-end d-flex">
                                     <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                                        <a id="btn" class="btn btn-light" title="Create account for student" href="lessons_add"><i style="font-size: 13px;" class="ti-write"></i> Add lesson</a>
+                                        <a id="btn" class="btn btn-light" title="Create account for student" href="lessons_add"><i style="font-size: 13px;" class="ti-write"></i> Add lesson and Materials</a>
                                     </div>
                                 </div>
                             </div>
@@ -71,8 +71,7 @@
                                                     <i class="ti-menu"></i>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                                                    <a style="border-bottom: 1px solid gray;" class="dropdown-item" 
-                                                    href="index.php?page=_materials&lesson=<?php echo $lesson_id; ?>">View materials</a>
+                                                    <a style="border-bottom: 1px solid gray;" class="dropdown-item" href="index.php?page=_materials&lesson=<?php echo $lesson_id; ?>">View materials</a>
                                                     <a style="border-bottom: 1px solid gray;" class="dropdown-item" href="#">Preview lesson</a>
                                                     <a class="dropdown-item" href="#">Add Quiz</a>
                                                 </div>
@@ -128,6 +127,38 @@
         </div>
     </div>
 </div>
+
+<?php
+if (isset($_GET['notif'])) {
+?>
+
+<script>
+        const Toast = Swal.mixin({
+            toast: true,
+            position: 'top-end',
+            showConfirmButton: false,
+            timer: 2000,
+            timerProgressBar: true,
+            showCloseButton: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+        })
+        Toast.fire({
+            icon: "<?php echo $_SESSION['icon'] ?>",
+            title: "<?php echo $_SESSION['content'] ?>"
+        }).then(function() {
+            window.location = "lessons";
+        })
+    </script>
+
+<?php
+    unset($_GET['notif']);
+    unset($_SESSION['icon']);
+    unset($_SESSION['content']);
+}
+?>
 
 <script>
     $(document).ready(function() {
