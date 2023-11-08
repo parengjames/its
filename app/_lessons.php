@@ -71,9 +71,10 @@
                                                     <i class="ti-menu"></i>
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
+                                                    <a style="border-bottom: 1px solid gray;" class="dropdown-item" 
+                                                    href="index.php?page=_materials&lesson=<?php echo $lesson_id; ?>">View materials</a>
                                                     <a style="border-bottom: 1px solid gray;" class="dropdown-item" href="#">Preview lesson</a>
-                                                    <a style="border-bottom: 1px solid gray;" class="dropdown-item" href="#">PDF list</a>
-                                                    <a class="dropdown-item" href="#">Video list</a>
+                                                    <a class="dropdown-item" href="#">Add Quiz</a>
                                                 </div>
                                             </td>
                                         </tr>

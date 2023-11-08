@@ -10,6 +10,8 @@ RewriteRule ^course/?$ index.php?page=_course [NC,L]
 RewriteRule ^students/?$ index.php?page=_students [NC,L]
 RewriteRule ^lessons/?$ index.php?page=_lessons [NC,L]
 RewriteRule ^lessons_add/?$ index.php?page=_lessons_add [NC,L]
+RewriteRule ^materials/?$ index.php?page=_materials [NC,L]
+RewriteRule ^view_materials/?$ index.php?page=_view_materials [NC,L]
 #users
 
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]

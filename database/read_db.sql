@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2023 at 02:10 AM
+-- Generation Time: Nov 08, 2023 at 03:47 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -41,7 +41,18 @@ CREATE TABLE `action_logs` (
 
 INSERT INTO `action_logs` (`log_id`, `user_id`, `log_name`, `log_value`, `date_time`) VALUES
 (105, 31, 'logout', 0, '2023-11-06 13:19:30'),
-(106, 31, 'login', 1, '2023-11-06 13:39:56');
+(106, 31, 'login', 1, '2023-11-06 13:39:56'),
+(107, 31, 'login', 1, '2023-11-07 01:32:17'),
+(108, 31, 'logout', 0, '2023-11-07 01:33:22'),
+(109, 31, 'login', 1, '2023-11-07 01:34:04'),
+(110, 31, 'logout', 0, '2023-11-07 01:34:15'),
+(111, 37, 'login', 1, '2023-11-07 01:34:20'),
+(112, 37, 'logout', 0, '2023-11-07 01:34:39'),
+(113, 31, 'login', 1, '2023-11-07 01:36:58'),
+(114, 31, 'logout', 0, '2023-11-07 01:37:02'),
+(115, 31, 'login', 1, '2023-11-07 01:37:08'),
+(116, 31, 'logout', 0, '2023-11-07 01:39:29'),
+(117, 31, 'login', 1, '2023-11-07 03:19:10');
 
 -- --------------------------------------------------------
 
@@ -95,17 +106,17 @@ CREATE TABLE `lesson_pdf` (
   `lesson_id` int(11) NOT NULL,
   `pdf_content` mediumtext NOT NULL,
   `pdf_location` mediumtext NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT current_timestamp()
+  `pdf_date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `lesson_pdf`
 --
 
-INSERT INTO `lesson_pdf` (`pdf_id`, `lesson_id`, `pdf_content`, `pdf_location`, `date_added`) VALUES
-(9, 7, 'After Effects Beginners Guide - GD Studio.pdf', 'pdf_uploads/After Effects Beginners Guide - GD Studio.pdf', '2023-11-06 14:24:44'),
+INSERT INTO `lesson_pdf` (`pdf_id`, `lesson_id`, `pdf_content`, `pdf_location`, `pdf_date_added`) VALUES
 (10, 8, 'output.pdf', 'pdf_uploads/output.pdf', '2023-11-06 15:45:44'),
-(11, 9, 'asdas.pdf', 'pdf_uploads/asdas.pdf', '2023-11-06 15:48:20');
+(11, 9, 'asdas.pdf', 'pdf_uploads/asdas.pdf', '2023-11-06 15:48:20'),
+(17, 7, 'CV JAMES TULING.pdf', 'pdf_uploads/CV JAMES TULING.pdf', '2023-11-07 09:05:05');
 
 -- --------------------------------------------------------
 
@@ -118,14 +129,14 @@ CREATE TABLE `lesson_video` (
   `lesson_id` int(11) NOT NULL,
   `playlist` mediumtext NOT NULL,
   `video_location` mediumtext NOT NULL,
-  `date_added` timestamp NOT NULL DEFAULT current_timestamp()
+  `video_date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `lesson_video`
 --
 
-INSERT INTO `lesson_video` (`video_id`, `lesson_id`, `playlist`, `video_location`, `date_added`) VALUES
+INSERT INTO `lesson_video` (`video_id`, `lesson_id`, `playlist`, `video_location`, `video_date_added`) VALUES
 (6, 7, 'Venice Canal.mp4', 'video_upload/Venice Canal.mp4', '2023-11-06 14:25:00'),
 (7, 8, '3.mp4', 'video_upload/3.mp4', '2023-11-06 15:46:07'),
 (8, 9, '4.mp4', 'video_upload/4.mp4', '2023-11-06 15:48:34');
@@ -224,7 +235,7 @@ INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `role`, `Birthday`, `ge
 (13, 'Admin', 'Admin', 3, NULL, 'Rather not say', NULL, NULL, '', NULL, 'admin@admin', 'superadmin', '$2y$10$roxFOISnB2mMuh80FGpfCOJvzj53fPHd23A8f6a9ZqiAI571DePCe', '2023-10-29 07:58:19'),
 (31, 'Admin', 'Admin', 1, '2000-09-26', 'Male', 23, NULL, '', NULL, 'admin@yahoo.com', 'admin', '$2y$10$2k2D6oby2vIqjBAA0QBxQOSdH1fVTu3X0Wlm18n5NuCi.ir4JEUGe', '2023-10-29 08:03:18'),
 (36, 'Lebron James', 'Delos Baynte', 2, '1983-01-17', 'Male', 40, NULL, 'Approved', NULL, 'user@elearning.com', 'user', '$2y$10$.fYTd.9DI1oKxkLQU/Rwlefz4sbL8J0YyxZM11Cz.cIbMqZoL1fve', '2023-11-06 13:19:09'),
-(37, 'George', 'Delos Amega', 2, '2000-09-10', 'Male', 23, NULL, 'Pending', NULL, 'user1@gmail.com', 'user100', '$2y$10$AAGe7c1jdE7lv1nnl326Fu6jNoHKRo2UHuJWsMfk.ljBqhvDJvZlm', '2023-11-06 13:39:47');
+(37, 'George', 'Delos Amega', 2, '2000-09-10', 'Male', 23, NULL, 'Pending', NULL, 'user1@gmail.com', 'user100', '$2y$10$AAGe7c1jdE7lv1nnl326Fu6jNoHKRo2UHuJWsMfk.ljBqhvDJvZlm', '2023-11-07 01:37:14');
 
 --
 -- Indexes for dumped tables
@@ -292,7 +303,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `action_logs`
 --
 ALTER TABLE `action_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 
 --
 -- AUTO_INCREMENT for table `activity`
@@ -310,13 +321,13 @@ ALTER TABLE `lesson`
 -- AUTO_INCREMENT for table `lesson_pdf`
 --
 ALTER TABLE `lesson_pdf`
-  MODIFY `pdf_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `pdf_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `lesson_video`
 --
 ALTER TABLE `lesson_video`
-  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `video_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `quiz`
