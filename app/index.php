@@ -28,7 +28,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       if (isset($_GET['page'])) {
         $page = '' . $_GET['page'] . '.php';
       } else {
-        $page = '_dashboard.php';
+        if($_SESSION['login_role'] == 1){
+          $page = '_dashboard.php';
+        }else if($_SESSION['login_role'] == 2){ 
+          $page = '_home.php';
+        }
       }
 
       if (file_exists($page)) {
