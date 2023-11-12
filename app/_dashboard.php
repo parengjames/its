@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    
+
     <div style="margin-top: -28px;" class="row">
         <div style="margin-top: 30px;" class="col-md-6 grid-margin transparent">
             <div class="row">
@@ -26,7 +26,19 @@
                         <div class="card-body">
                             <p style="font-size: medium;" class="mb-4">Manage Students</p>
                             <i style="font-size: 20px;" class="ti-user"></i>
-                            <span style="margin-left: 10px;font-size: 20px;">1</span>
+                            <span style="margin-left: 10px;font-size: 20px;">
+                                <?php
+                                $_sql = mysqli_query($con, "SELECT COUNT(user_id) AS total_students FROM `users` WHERE role = 2");
+                                $_result = mysqli_num_rows($_sql);
+                                if ($_result > 0) {
+                                    while ($row = mysqli_fetch_assoc($_sql)) {
+                                        echo $row['total_students'];
+                                    }
+                                } else {
+                                    echo "0";
+                                }
+                                ?>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -35,7 +47,19 @@
                         <div class="card-body">
                             <p style="font-size: medium;" class="mb-4">Manage Courses</p>
                             <i style="font-size: 20px;" class="ti-bag"></i>
-                            <span style="margin-left: 10px;font-size: 20px;">10</span>
+                            <span style="margin-left: 10px;font-size: 20px;">
+                                <?php
+                                $_sql = mysqli_query($con, "SELECT COUNT(subject_id) AS total_course FROM `subject`");
+                                $_result = mysqli_num_rows($_sql);
+                                if ($_result > 0) {
+                                    while ($row = mysqli_fetch_assoc($_sql)) {
+                                        echo $row['total_course'];
+                                    }
+                                } else {
+                                    echo "0";
+                                }
+                                ?>
+                            </span>
                         </div>
                     </div>
                 </a>
@@ -46,16 +70,40 @@
                         <div class="card-body">
                             <p style="font-size: medium;" class="mb-4">Manage Lessons</p>
                             <i style="font-size: 20px;" class="ti-book"></i>
-                            <span style="margin-left: 10px;font-size: 20px;">10</span>
+                            <span style="margin-left: 10px;font-size: 20px;">
+                            <?php
+                                $_sql = mysqli_query($con, "SELECT COUNT(lesson_id) AS total_lesson FROM `lesson`");
+                                $_result = mysqli_num_rows($_sql);
+                                if ($_result > 0) {
+                                    while ($row = mysqli_fetch_assoc($_sql)) {
+                                        echo $row['total_lesson'];
+                                    }
+                                } else {
+                                    echo "0";
+                                }
+                                ?>
+                            </span>
                         </div>
                     </div>
                 </a>
                 <a style="text-decoration: none; cursor: pointer;" href="activities" class="col-md-6 stretch-card transparent">
                     <div class="card card-light-danger">
                         <div class="card-body">
-                            <p style="font-size: medium;"  class="mb-4">Manage Activities</p>
+                            <p style="font-size: medium;" class="mb-4">Manage Activities</p>
                             <i style="font-size: 20px;" class="ti-pencil-alt"></i>
-                            <span style="margin-left: 10px;font-size: 20px;">1</span>
+                            <span style="margin-left: 10px;font-size: 20px;">
+                            <?php
+                                $_sql = mysqli_query($con, "SELECT COUNT(activity_id) AS total_activity FROM `activity`");
+                                $_result = mysqli_num_rows($_sql);
+                                if ($_result > 0) {
+                                    while ($row = mysqli_fetch_assoc($_sql)) {
+                                        echo $row['total_activity'];
+                                    }
+                                } else {
+                                    echo "0";
+                                }
+                                ?>
+                            </span>
                         </div>
                     </div>
                 </a>

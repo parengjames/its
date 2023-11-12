@@ -8,6 +8,19 @@
     </li>
 
     <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+        <i class="icon-head menu-icon"></i>
+        <span class="menu-title">Students</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="auth">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="students">Manage Students</a></li>
+        </ul>
+      </div>
+    </li>
+
+    <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
         <i class="icon-columns menu-icon"></i>
         <span class="menu-title">Course</span>
@@ -21,25 +34,5 @@
         </ul>
       </div>
     </li>
-
-    <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <i class="icon-head menu-icon"></i>
-        <span class="menu-title">Students</span>
-        <i class="menu-arrow"></i>
-      </a>
-      <div class="collapse" id="auth">
-        <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="students">Manage Students</a></li>
-        </ul>
-      </div>
-    </li>
-
-    <!-- <li class="nav-item">
-      <a class="nav-link" href="about">
-        <i class="icon-paper menu-icon"></i>
-        <span class="menu-title">About</span>
-      </a>
-    </li>
-  </ul> -->
+  </ul>
 </nav>

@@ -105,8 +105,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="title">Number order</label>
-                        <input type="number" class="form-control" name="number" id="number">
+                        <label for="title">Number control</label>
+                        <input type="number" class="form-control" name="number" id="number" autocomplete="off">
                     </div>
                     <div class="form-group">
                         <label for="lesson_materials">Lesson Content</label>
@@ -193,15 +193,19 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>File upload</label>
-                                <input type="file" name="pdf_upload" id="pdf_upload" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload PDF">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                    </span>
-                                </div>
+                                <label for="title">Number control</label>
+                                <input type="number" class="form-control" name="control_number" id="control_number" autocomplete="off">
                             </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>File upload</label>
+                        <input type="file" name="pdf_upload" id="pdf_upload" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload PDF">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
                         </div>
                     </div>
                     <div class="form-group mt-3">
@@ -264,15 +268,19 @@
                         </div>
                         <div class="col-6">
                             <div class="form-group">
-                                <label>Video upload</label>
-                                <input type="file" name="video_upload" class="file-upload-default">
-                                <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload video">
-                                    <span class="input-group-append">
-                                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                    </span>
-                                </div>
+                                <label for="title">Number control</label>
+                                <input type="number" class="form-control" name="control_number" id="control_number" autocomplete="off">
                             </div>
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <label>Video upload</label>
+                        <input type="file" name="video_upload" class="file-upload-default">
+                        <div class="input-group col-xs-12">
+                            <input type="text" class="form-control file-upload-info" disabled placeholder="Upload video">
+                            <span class="input-group-append">
+                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                            </span>
                         </div>
                     </div>
                     <div class="form-group mt-3">

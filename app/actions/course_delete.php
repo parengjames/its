@@ -45,6 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                 }
 
+                //query of the content table - sunod i delete ang content..........
+                $query = mysqli_query($con, "SELECT * FROM `lesson_content` WHERE `lesson_id`='$lesson_id'");
+                $query_result = mysqli_num_rows($query);
+                if ($query_result > 0) {
+                    while ($row = mysqli_fetch_assoc($query)) {
+                        $_cid = $row['content_id'];
+                        // now delete the pdf in database.........
+                        $_sqlqueryyy = mysqli_query($con, "DELETE FROM `lesson_content` WHERE `content_id`=$_cid");
+                    }
+                }
+
                 //now delete the lesson under this course........
                 $_lessonquery = mysqli_query($con, "DELETE FROM `lesson` WHERE `lesson_id`=$lesson_id");
             }

@@ -23,7 +23,7 @@
                                             <th>No</th>
                                             <th>Lesson name</th>
                                             <th>Date uploaded</th>
-                                            <th>Action</th>
+                                            <th style="width: 100px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -96,14 +96,14 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="table-responsive">
-                                <table class="table table-hover" id="materials_table" style="width:100%">
+                                <table class="table table-hover" id="pdf_table" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Lesson name</th>
                                             <th>PDF name</th>
                                             <th>Date uploaded</th>
-                                            <th>Action</th>
+                                            <th style="width: 100px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -187,7 +187,7 @@
                                             <th>Lesson name</th>
                                             <th>Video name</th>
                                             <th>Date uploaded</th>
-                                            <th>Action</th>
+                                            <th style="width: 100px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -209,7 +209,7 @@
                                                         <td><?php echo $row['playlist'] ?></td>
                                                         <td><?php echo date('F d Y, h:i:s A', strtotime($row['video_date_added'])) ?></td>
                                                         <td>
-                                                            <a href="index.php?page=_view_materials&video=<?php echo $row['video_id'] ?>&lesson=<?php echo $row['lesson_title'] ?>&vid=<?php echo $row['playlist'] ?>">
+                                                            <a href="index.php?page=_view_materials&video=<?php echo $row['video_id'] ?>&lesson_title=<?php echo $row['lesson_title'] ?>&vid=<?php echo $row['playlist'] ?>">
                                                                 <button id="icon_button" type="button" title="View video" class="btn btn-rounded btn-outline-info btn-icon">
                                                                     <i class="ti-eye"></i>
                                                                 </button>
@@ -368,6 +368,12 @@
             var modal = $(this)
             modal.find('#id').val(id)
         })
+    })
+</script>
+<!-- data table -->
+<script>
+    $(document).ready(function() {
+        new DataTable('#pdf_table')
     })
 </script>
 

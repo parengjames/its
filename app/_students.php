@@ -172,7 +172,7 @@
 
 <!-- Update student info Modal -->
 <div class="modal fade" id="user_update_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="max-width: 900px;" role="document">
+    <div class="modal-dialog modal-lg" style="max-width: 900px; margin-top: 10px;" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="exampleModalLongTitle">Update Student account</h4>
@@ -396,15 +396,9 @@
     </div>
 </div>
 
-<!-- <script>
-</script>
-<script>
-
-</script> -->
-
 <!-- add student modal -->
 <div class="modal fade" id="AddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" style="width: 900px;" role="document">
+    <div class="modal-dialog modal-lg" style="max-width: 900px; margin-top: 10px;" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="exampleModalLabel">Register new student</h4>

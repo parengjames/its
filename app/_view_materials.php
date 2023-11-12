@@ -1,13 +1,27 @@
-<div class="content-wrapper">
-    <div style="display: flex;" class="col-md-12 grid-margin">
-        <a href="index.php?page=_materials&lesson=<?php echo $_SESSION['l_id'] ?>"><button style="margin-bottom: 20px;font-size: 15px;" type="button" class="btn btn-outline-dark btn-sm">
-                <i class="ti-arrow-left"></i> Back
-            </button></a>
+<div style="padding-top: 15px;" class="content-wrapper">
+    <div style="display: flex; margin-bottom: 18px;" class="col-md-12 grid-margin">
+        <?php
+        //from _preview_lessons...
+        if (isset($_GET['from']) && $_GET['from'] == "1") {
+        ?>
+            <a href="index.php?page=_preview_lesson&lesson=<?php echo $_GET['lesson'] ?>"><button style="margin-bottom: 20px;font-size: 15px;" type="button" class="btn btn-outline-dark btn-sm">
+                    <i class="ti-arrow-left"></i> Back
+                </button></a>
+        <?php
+        // from materials............
+        } else {
+        ?>
+            <a href="index.php?page=_materials&lesson=<?php echo $_SESSION['l_id'] ?>"><button style="margin-bottom: 20px;font-size: 15px;" type="button" class="btn btn-outline-dark btn-sm">
+                    <i class="ti-arrow-left"></i> Back
+                </button></a>
+        <?php
+        }
+        ?>
         <div class="col-12 col-xl-8 mt-2">
             <?php
-            if (isset($_GET['lesson']) && isset($_GET['vid'])) {
+            if (isset($_GET['lesson_title']) && isset($_GET['vid'])) {
             ?>
-                <h3 class="font-weight-bold"><?php echo $_GET['lesson'] . ': ' . $_GET['vid'] ?></h3>
+                <h3 class="font-weight-bold"><?php echo $_GET['lesson_title'] . ': ' . $_GET['vid'] ?></h3>
             <?php
             }
             ?>
