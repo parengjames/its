@@ -111,8 +111,8 @@
                                 </div>
                                 <div class="form-group">
                                     <textarea id="lesson_materials" name="lesson_materials" class="form-group">
-                                            <p><?php echo $content_body ?></p>
-                                        </textarea>
+                                            <?php echo $content_body ?>
+                                    </textarea>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" name="update_content" class="btn btn-primary mr-2">Update</button>

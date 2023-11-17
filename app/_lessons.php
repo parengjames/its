@@ -28,13 +28,13 @@
                                     <th style="width: 190px;">
                                         Title
                                     </th>
-                                    <th style="width: 300px;">
+                                    <th style="width: 250px;">
                                         Description
                                     </th>
-                                    <th style="width: 150px;">
+                                    <th style="width: 200px;">
                                         Subject
                                     </th>
-                                    <th style="width: 100px;">
+                                    <th style="width: 80px;">
                                         Status
                                     </th>
                                     <th style="width: 100px;">
@@ -58,7 +58,7 @@
                                             <td><?php echo $number; ?></td>
                                             <td><?php echo $row['lesson_title'] ?></td>
                                             <td><textarea disabled style="word-wrap: break-word;width: 300px; border: none; resize: vertical;"><?php echo $row['lesson_description'] ?></textarea></td>
-                                            <td><?php echo $row['subject_name'] ?></td>
+                                            <td><textarea disabled style="word-wrap: break-word;width: 200px; border: none; resize: vertical;"><?php echo $row['subject_name'] ?></textarea></td>
                                             <td><?php echo $row['lesson_status'] ?></td>
                                             <td>
                                                 <button data-id="<?php echo $lesson_id ?>" data-title="<?php echo $row['lesson_title'] ?>" data-desc="<?php echo $row['lesson_description'] ?>" data-subj="<?php echo $row['subject_name'] ?>" data-stats="<?php echo $row['lesson_status'] ?>" type="button" data-toggle="modal" data-target="#lesson_update_modal" id="icon_button" title="Update Info" class="btn btn-rounded btn-outline-info btn-icon">

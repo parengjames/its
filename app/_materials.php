@@ -76,7 +76,6 @@
                                             </tr>
                                         <?php
                                         }
-
                                         ?>
                                     </tbody>
                                 </table>

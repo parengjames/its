@@ -58,6 +58,7 @@
                                 if ($sqlquery_result > 0) {
                                     while ($row = mysqli_fetch_assoc($sqlquery)) {
                                         $act_id = $row['activity_id'];
+                                        $_SESSION['activity'] = $act_id;
                                 ?>
                                         <tr style="resize: vertical;">
                                             <td><?php echo $number; ?></td>

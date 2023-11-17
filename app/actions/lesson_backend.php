@@ -173,6 +173,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
             }
 
+            // for deletion of activity ......................
+            $act_query = mysqli_query($con, "SELECT * FROM `activity` WHERE `lesson_id`=$lesson_id");
+            $act_result = mysqli_num_rows($act_query);
+            if ($act_result > 0) {
+                while ($row = mysqli_fetch_assoc($act_query)) {
+                    $actid = $row['activity_id'];
+
+                    $_ques = mysqli_query($con, "SELECT * FROM `quiz` WHERE `activity_id` = '$actid'");
+                    $_ques_result = mysqli_num_rows($_ques);
+                    if ($_ques_result > 0) {
+                        while ($roww = mysqli_fetch_assoc($_ques)) {
+                            $hintimage = $roww['hint2'];
+                            // also delete the hint picture in local folder......
+                            $hint_delete = "hint_pictures/" . $hintimage;
+                            unlink($hint_delete);
+                            //query for deletion of questionss......
+                            $_question = mysqli_query($con, "DELETE FROM `quiz` WHERE activity_id = '$actid'");
+                            // query to delete the activity..............
+                            $_act = mysqli_query($con, "DELETE FROM `activity` WHERE `lesson_id`='$lesson_id'");
+                        }
+                    }
+                }
+            }
+
             // now delete the lesson..........................................
             $_lessonquery = mysqli_query($con, "DELETE FROM `lesson` WHERE `lesson_id`=$lesson_id");
             if ($_lessonquery) {
