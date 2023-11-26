@@ -17,6 +17,8 @@ RewriteRule ^preview_lesson/?$ index.php?page=_preview_lesson [NC,L]
 RewriteRule ^activities/?$ index.php?page=_activities [NC,L]
 RewriteRule ^add_quiz/?$ index.php?page=_add_quiz [NC,L]
 RewriteRule ^home/?$ index.php?page=_home[NC,L]
+RewriteRule ^lessons_student/?$ index.php?page=_lesson_student[NC,L]
+RewriteRule ^lesson_view/?$ index.php?page=_lesson_view[NC,L]
 #users
 
 #RewriteRule ^([^\.]+)$ $1.php [NC,L]

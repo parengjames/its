@@ -9,7 +9,14 @@
                 </button></a>
         <?php
         // from materials............
-        } else {
+        } else if (isset($_GET['from']) && $_GET['from'] == "2") {
+            ?>
+                <a href="index.php?page=_lesson_view&lesson=<?php echo $_GET['lesson']?>&side=unlock"><button style="margin-bottom: 20px;font-size: 15px;" type="button" class="btn btn-outline-dark btn-sm">
+                        <i class="ti-arrow-left"></i> Back
+                    </button></a>
+            <?php
+            // from materials............
+            } else {
         ?>
             <a href="index.php?page=_materials&lesson=<?php echo $_SESSION['l_id'] ?>"><button style="margin-bottom: 20px;font-size: 15px;" type="button" class="btn btn-outline-dark btn-sm">
                     <i class="ti-arrow-left"></i> Back

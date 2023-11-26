@@ -5,7 +5,18 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>eLearning Admin</title>
+    <?php
+    if (isset($_SESSION['login_role']) && $_SESSION['login_role'] == '1') {
+    ?>
+        <title>eLearning | Admin</title>
+    <?php
+    } else {
+    ?>
+        <title>eLearning | Student</title>
+    <?php
+    }
+    ?>
+
 
     <!-- plugins:css -->
     <link rel="stylesheet" href="vendors/feather/feather.css">
@@ -36,8 +47,11 @@
     <script src="vendors/DataTables/jquery-3.7.0.js"></script>
     <script src="vendors/DataTables/jquery.dataTables.min.js"></script>
 
-    <!-- sweet alert cdn -->
+    <!-- sweet alert 2 cdn -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- sweet alert 1 -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- rich text editor -->
     <link rel="stylesheet" href="richtexteditor/richtexteditor/rte_theme_default.css">
@@ -67,6 +81,13 @@
         align-items: center;
         margin: auto;
         font-size: 18px;
+    }
+
+    .swal-footer {
+        text-align: center;
+    }
+    .swal-text{
+        text-align: center;
     }
 </style>
 

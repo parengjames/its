@@ -21,23 +21,49 @@
         <?php
         }
         ?>
-        <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+        <div style="min-height: 100px;max-height: 350px; overflow-y: scroll;" class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
           <p class="mb-0 font-weight-normal float-left dropdown-header">Activities</p>
           <ul>
-            <div class="dropdown-item preview-item">
-              <div class="preview-thumbnail">
-                <div class="preview-icon bg-success">
-                  <i class="ti-info-alt mx-0"></i>
+            <?php
+            $login_user = $_SESSION['user_id'];
+            $sql_query = mysqli_query($con, "SELECT * FROM `action_logs` WHERE `user_id` = '$login_user'");
+            $result = mysqli_num_rows($sql_query);
+            if ($result > 0) {
+              while ($row = mysqli_fetch_assoc($sql_query)) {
+                $action = $row['log_name'];
+                $time = $row['date_time'];
+            ?>
+                <div class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <div class="preview-icon bg-success">
+                      <i class="ti-info-alt mx-0"></i>
+                    </div>
+                  </div>
+                  <div class="preview-item-content">
+                    <h6 class="preview-subject font-weight-normal"><?php echo $action ?></h6>
+                    <p class="font-weight-light small-text mb-0 text-muted">
+                      <?php echo date('F d Y, h:i:s A', strtotime($time)) ?>
+                    </p>
+                  </div>
+                </div>
+              <?php
+              }
+            } else {
+              ?>
+              <div class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="ti-info-alt mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">NO DATA FOUND</h6>
                 </div>
               </div>
-              <div class="preview-item-content">
-                <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                <p class="font-weight-light small-text mb-0 text-muted">
-                  Just now
-                </p>
-              </div>
-            </div>
-          </ul>
+            <?php
+            }
+            ?>
+        </div>
       </li>
       <li class="nav-item nav-profile dropdown">
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">

@@ -224,7 +224,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("location: ../index.php?page=_lessons_add&deny=return#uploadcontent");
         } else {
             $sql_query = mysqli_query($con, "INSERT INTO `lesson_content`(`content_body`,`num_order` ,`lesson_id`) 
-            VALUES ('" . $content . "',$number_order,'" . $lesson . "')");
+            VALUES ('".$content."',$number_order,'" . $lesson . "')");
             if ($sql_query) {
                 $_SESSION['text'] = "The content uploaded successfully";
                 header("location: ../index.php?page=_lessons_add&give=way#uploadcontent");
