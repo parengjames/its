@@ -1,7 +1,7 @@
 <div style="padding-top: 20px;" class="content-wrapper">
     <div class="row">
         <div class="tabform col-lg-12 grid-margin stretch-card">
-            <div class="card">
+            <div id="up" class="card">
                 <div class="card-body">
                     <div class="col-md-12 grid-margin">
                         <div style="margin-bottom: -30px;" class="row">
@@ -43,6 +43,7 @@
                     <?php
                     if (isset($_GET['lesson'])) {
                         $lesson_id = $_GET['lesson'];
+                        $_SESSION['from_lesson'] = $lesson_id;
                         $_sql = mysqli_query($con, "SELECT * FROM `lesson_content` WHERE lesson_id = '$lesson_id'
                             ORDER BY num_order ASC");
                         $_result = mysqli_num_rows($_sql);
@@ -147,7 +148,7 @@
                                                     echo "no data found";
                                                 }
                                                 ?>
-
+                                            
                                             </tbody>
                                         </table>
                                     </div>
@@ -161,19 +162,23 @@
     </div>
 
     <div style="text-align: center;" class="col-md-12 grid-margin">
-        <button onclick="ready()" style="font-size: 15px;" type="button" class="btn btn-primary btn-sm">
+        <button data-toggle="modal" data-target="#confirmation" style="font-size: 15px;" type="button" class="btn btn-primary btn-sm">
             <i class="ti-pencil"></i> Take Quiz now?
         </button>
     </div>
 </div>
 
-<script>
-    function ready() {
-        swal({
-            title: "Take quiz",
-            text: "Have you prepared for the quiz? Ensure you've reviewed the lesson.",
-            showCancelButton: true,
-            buttons: true
-        });
-    }
-</script>
+<div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog" style="margin-top: 150px;text-align: center;" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <img style="margin-bottom: 25px;" src="images/quizgif.gif" alt="">
+        <h4>Take quiz</h4><br>
+        <p>Have you prepared for the quiz? Ensure you've reviewed the lesson.</p>
+        <br>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+        <a href="actions/log.php?fromlesson=<?php echo $_SESSION['from_lesson'] ?>" type="button" class="btn btn-primary">Proceed</a>
+      </div>
+    </div>
+  </div>
+</div>

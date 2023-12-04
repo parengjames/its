@@ -30,16 +30,16 @@
                                     <th style="width: 150px;">
                                         Activity
                                     </th>
-                                    <th style="width: 100px;">
+                                    <th style="width: 200px;">
                                         From Lesson
                                     </th>
-                                    <th style="width: 100px;">
+                                    <th style="width: 50px;">
                                         Questions
                                     </th>
-                                    <th style="width: 100px;">
+                                    <th style="width: 50px;">
                                         Points
                                     </th>
-                                    <th style="width: 100px;">
+                                    <th style="width: 50px;">
                                         Average
                                     </th>
                                     <th style="width: 100px;">
