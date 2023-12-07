@@ -23,8 +23,9 @@
                         <tbody>
                             <?php
                             if (isset($_GET['course'])) {
-
+                                $user_id = $_SESSION['user_id'];
                                 $_courseid = $_GET['course'];
+                                $_SESSION['course_id'] = $_courseid;
                                 $sql = mysqli_query($con, "SELECT * FROM `lesson` WHERE `subject_id`=$_courseid
                                 ORDER BY `lesson_id` ASC");
                                 $result = mysqli_num_rows($sql);
@@ -70,6 +71,12 @@
                                                     </a>
                                                 <?php
                                                 } else if ($incrementid) {
+                                                    if(isset($_SESSION['activity_id_from_results'])){
+                                                        
+                                                    }else{
+
+                                                    }
+                                                    $sqlquery = mysqli_query($con,"SELECT * FROM quiz_results WHERE `user_id` = $user_id AND `activity_id`=")
                                                 ?>
                                                     <a onclick="unavailable()" style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" class="btn btn-warning">
                                                         <i class="ti-alert"></i> READ

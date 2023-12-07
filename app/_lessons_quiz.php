@@ -116,7 +116,7 @@ if (isset($_GET['wrong'])) {
 }
 ?>
 
-<div class="backdrop">
+<div class="backdrop" onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
     <div class="tabform col-lg-12 grid-margin stretch-card">
         <div id="card-header" class="card">
             <div class="card-body bod">
@@ -132,6 +132,7 @@ if (isset($_GET['wrong'])) {
                         while ($row = mysqli_fetch_assoc($sql)) {
                             //session variabless.........
                             $_SESSION['total_items'] = $row['total_questions'];
+                            $_SESSION['passing_grade'] = $row['passing_grade'];
                 ?>
                             <h3 style="font-weight: bold;color: #06BBCC;"><?php echo $row['activity_name'] ?></h3>
                 <?php
@@ -356,7 +357,7 @@ if (isset($_SESSION['show_sweetalert_last'])) {
             icon: "<?php echo $_SESSION['icon'] ?>",
             button: "See result"
         }).then(function() {
-            window.location = "";
+            window.location = "_quiz_result.php?saveresult=1";
         })
     </script>
 <?php
@@ -424,3 +425,11 @@ if (isset($_GET['gate'])) {
         })
     }
 </script>
+
+<script type="text/javascript">
+    window.history.forward();
+
+    function noBack() {
+        window.history.forward();
+    }
+    </script>

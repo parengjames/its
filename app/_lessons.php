@@ -56,7 +56,7 @@
                                 ?>
                                         <tr style="resize: vertical;">
                                             <td><?php echo $number; ?></td>
-                                            <td><?php echo $row['lesson_title'] ?></td>
+                                            <td><textarea disabled style="word-wrap:break-word;width: 200px;border: none;resize: vertical;"><?php echo $row['lesson_title'] ?></textarea></td>
                                             <td><textarea disabled style="word-wrap: break-word;width: 300px; border: none; resize: vertical;"><?php echo $row['lesson_description'] ?></textarea></td>
                                             <td><textarea disabled style="word-wrap: break-word;width: 200px; border: none; resize: vertical;"><?php echo $row['subject_name'] ?></textarea></td>
                                             <td><?php echo $row['lesson_status'] ?></td>
