@@ -8,11 +8,11 @@
     <?php
     if (isset($_SESSION['login_role']) && $_SESSION['login_role'] == '1') {
     ?>
-        <title>eLearning | Admin</title>
+        <title>CompriMind | Admin</title>
     <?php
     } else {
     ?>
-        <title>eLearning | Student</title>
+        <title>CompriMind | Student</title>
     <?php
     }
     ?>

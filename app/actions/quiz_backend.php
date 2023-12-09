@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $_SESSION['icon'] = "error";
                         $_SESSION['head_text'] = "Unfortunately";
                         $_SESSION['body_text'] = "Your answer is wrong again, analyze the question carefully.";
-                        header("location:../_lessons_quiz.php?activity=$activity_id&item=$question_number&wrong=2");
+                        header("location:../_lessons_quiz.php?activity=$activity_id&item=$question_number&wrong=2usehint=$hint_used&show=$show_hint");
                     }else if($total_mistakes == 3){
                         $_SESSION['show_sweetalert'] = "go";
                         $_SESSION['icon'] = "error";

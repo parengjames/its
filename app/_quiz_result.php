@@ -109,7 +109,7 @@ $_SESSION['activity_id_from_results'] = $activity_id;
                         ?>
                             <h2 style="color: green;font-weight: bold;">Congratulations</h2><br>
                             <img style="height: 100px;" src="images/check-gif.gif" alt="check"><br><br>
-                            <h5>You have passed the quiz</h5><br>
+                            <h5>You have passed the quiz, you can now proceed to Lesson 2</h5><br>
                             <a class="btn btn-success" href="index.php?page=_home">Home</a>
                         <?php
                         } else {
@@ -133,9 +133,9 @@ $_SESSION['activity_id_from_results'] = $activity_id;
 
 <?php
 if (isset($_GET['saveresult'])) {
-
-    $save = mysqli_query($con, "INSERT INTO `quiz_results`(`user_id`, `activity_id`, `total_mistakes`, `total_hints`, `final_scores`, `is_passed`, `quiz_attempt`) 
-        VALUES ('$user_id','$activity_id','$total_mistakes','$total_hint','$total_points','$is_passed','$quiz_taken')");
+    $lesson = $_SESSION['from_lesson'];
+    $save = mysqli_query($con, "INSERT INTO `quiz_results`(`user_id`, `activity_id`,`lesson_id`, `total_mistakes`, `total_hints`, `final_scores`, `is_passed`, `quiz_attempt`) 
+        VALUES ('$user_id','$activity_id','$lesson','$total_mistakes','$total_hint','$total_points','$is_passed','$quiz_taken')");
 }
 ?>
 

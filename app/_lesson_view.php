@@ -148,7 +148,7 @@
                                                     echo "no data found";
                                                 }
                                                 ?>
-                                            
+
                                             </tbody>
                                         </table>
                                     </div>
@@ -165,20 +165,34 @@
         <button data-toggle="modal" data-target="#confirmation" style="font-size: 15px;" type="button" class="btn btn-primary btn-sm">
             <i class="ti-pencil"></i> Take Quiz now?
         </button>
+        <?php
+        $user = $_SESSION['user_id'];
+        $lesson_id = $_SESSION['from_lesson'];
+        $sqlquery1 = mysqli_query($con, "SELECT * FROM `quiz_results` WHERE `user_id` = $user AND `lesson_id`= $lesson_id");
+        $results1 = mysqli_num_rows($sqlquery1);
+        if ($results1 > 0) {
+        ?>
+            <a href="index.php?page=_quiz_result_view&side=unlock" style="font-size: 15px;" type="button" class="btn btn-primary btn-sm">
+                <i class="ti-eye"></i> View results
+            </a>
+        <?php
+        }
+        ?>
+
     </div>
 </div>
 
 <div class="modal fade" id="confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog" style="margin-top: 150px;text-align: center;" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <img style="margin-bottom: 25px;" src="images/quizgif.gif" alt="">
-        <h4>Take quiz</h4><br>
-        <p>Have you prepared for the quiz? Ensure you've reviewed the lesson.</p>
-        <br>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
-        <a href="actions/log.php?fromlesson=<?php echo $_SESSION['from_lesson'] ?>" type="button" class="btn btn-primary">Proceed</a>
-      </div>
+    <div class="modal-dialog" style="margin-top: 150px;text-align: center;" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img style="margin-bottom: 25px;" src="images/quizgif.gif" alt="">
+                <h4>Take quiz</h4><br>
+                <p>Have you prepared for the quiz? Ensure you've reviewed the lesson.</p>
+                <br>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Back</button>
+                <a href="actions/log.php?fromlesson=<?php echo $_SESSION['from_lesson'] ?>" type="button" class="btn btn-primary">Proceed</a>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

@@ -24,13 +24,11 @@
     <i class="settings-close ti-close"></i>
     <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
-                aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab" aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
         </li>
     </ul>
     <div class="tab-content" id="setting-content">
-        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
-            aria-labelledby="todo-section">
+        <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel" aria-labelledby="todo-section">
             <!-- <div class="add-items d-flex px-3 mb-0">
         <form class="form w-100">
           <div class="form-group d-flex">
@@ -45,7 +43,7 @@
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="checkbox" type="checkbox">
-                                Team review meeting at 3.00 PM
+                                View Result
                             </label>
                         </div>
                         <i class="remove ti-close"></i>
@@ -54,7 +52,7 @@
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="checkbox" type="checkbox">
-                                Prepare for presentation
+                                answer and pass the Quiz.
                             </label>
                         </div>
                         <i class="remove ti-close"></i>
@@ -63,7 +61,7 @@
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="checkbox" type="checkbox">
-                                Resolve all the low priority tickets due today
+                                Study the lesson 1
                             </label>
                         </div>
                         <i class="remove ti-close"></i>
@@ -72,7 +70,7 @@
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="checkbox" type="checkbox" checked>
-                                Schedule meeting for next week
+                                View course/topic.
                             </label>
                         </div>
                         <i class="remove ti-close"></i>
@@ -81,7 +79,7 @@
                         <div class="form-check">
                             <label class="form-check-label">
                                 <input class="checkbox" type="checkbox" checked>
-                                Project review
+                                Login to the Compromind system
                             </label>
                         </div>
                         <i class="remove ti-close"></i>

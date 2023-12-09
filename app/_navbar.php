@@ -70,6 +70,11 @@
           <img src="images/header/user icon.png" alt="profile" />
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+          <?php
+          $first_name = $_SESSION['firstname'];
+          $last_name = $_SESSION['lastname'];
+          ?>
+          <span class="dropdown-item" style="font-weight: bold;"><?php echo $first_name." ".$last_name ?></span>
           <a class="dropdown-item">
             <i class="ti-settings text-primary"></i>
             Profile

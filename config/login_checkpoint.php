@@ -43,6 +43,8 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                         $_SESSION['user_id'] = $rows['user_id'];
                         $_SESSION['username'] = $rows['username'];
                         $_SESSION['login_role'] = $rows['role'];
+                        $_SESSION['firstname'] = $rows['firstname'];
+                        $_SESSION['lastname'] = $rows['lastname'];
     
                         $login = "login";
                         $logvalue = 1;
@@ -57,6 +59,8 @@ if(isset($_POST['username']) && isset($_POST['password'])){
                         $_SESSION['user_id'] = $rows['user_id'];
                         $_SESSION['username'] = $rows['username'];
                         $_SESSION['login_role'] = $rows['role'];
+                        $_SESSION['firstname'] = $rows['firstname'];
+                        $_SESSION['lastname'] = $rows['lastname'];
     
                         $login = "login";
                         $logvalue = 1;

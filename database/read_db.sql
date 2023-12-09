@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2023 at 03:06 PM
+-- Generation Time: Dec 09, 2023 at 04:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,40 +40,47 @@ CREATE TABLE `action_logs` (
 --
 
 INSERT INTO `action_logs` (`log_id`, `user_id`, `log_name`, `log_value`, `date_time`) VALUES
-(11, 36, 'login', 1, '2023-12-07 02:49:28'),
-(12, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 02:49:32'),
-(13, 36, '[view] Lesson 1: Making Generalizations', 1, '2023-12-07 02:49:48'),
-(14, 31, 'login', 1, '2023-12-07 03:00:01'),
-(15, 31, '[view] Lesson 1: Making Generalizations', 1, '2023-12-07 08:25:19'),
-(16, 31, 'logout', 0, '2023-12-07 08:35:06'),
-(17, 36, 'login', 1, '2023-12-07 08:35:11'),
-(18, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 08:35:14'),
-(19, 36, '[view] Lesson 2: Common Elements and Themes in Greek Mythology', 1, '2023-12-07 08:35:22'),
-(20, 36, 'logout', 0, '2023-12-07 08:52:16'),
-(21, 36, 'login', 1, '2023-12-07 08:52:23'),
-(22, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 08:52:25'),
-(23, 36, '[view] Lesson 2: Common Elements and Themes in Greek Mythology', 1, '2023-12-07 08:52:27'),
-(24, 36, 'logout', 0, '2023-12-07 08:56:07'),
-(25, 31, 'login', 1, '2023-12-07 08:56:11'),
-(26, 31, 'logout', 0, '2023-12-07 08:57:29'),
-(27, 36, 'login', 1, '2023-12-07 08:57:36'),
-(28, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 08:57:38'),
-(29, 36, '[view] Lesson 2: Common Elements and Themes in Greek Mythology', 1, '2023-12-07 08:57:41'),
-(30, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 08:57:50'),
-(31, 36, '[view] Lesson 1: Making Generalizations', 1, '2023-12-07 08:57:53'),
-(32, 36, 'Take quiz', 1, '2023-12-07 08:58:09'),
-(33, 36, 'login', 1, '2023-12-07 12:55:21'),
-(34, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 12:55:45'),
-(35, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 12:55:53'),
-(36, 36, '[view] Lesson 1: Making Generalizations', 1, '2023-12-07 12:55:55'),
-(37, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 12:56:16'),
-(38, 36, '[view] Lesson 1: Making Generalizations', 1, '2023-12-07 12:56:31'),
-(39, 36, 'Take quiz', 1, '2023-12-07 12:56:47'),
-(40, 36, '[view] Lesson 1: Making Generalizations', 1, '2023-12-07 13:00:27'),
-(41, 36, '[view] Reading Comprehension in English', 1, '2023-12-07 13:51:29'),
-(42, 36, '[view] Lesson 1: Making Generalizations', 1, '2023-12-07 13:51:39'),
-(43, 36, 'Take quiz', 1, '2023-12-07 13:52:32'),
-(44, 36, '[view] Lesson 2: Common Elements and Themes in Greek Mythology', 1, '2023-12-07 13:53:13');
+(158, 36, 'logout', 0, '2023-12-09 14:55:39'),
+(159, 31, 'login', 1, '2023-12-09 15:00:22'),
+(160, 31, 'logout', 0, '2023-12-09 15:01:34'),
+(161, 40, 'login', 1, '2023-12-09 15:01:42'),
+(162, 40, '[view] Reading Comprehension in English', 1, '2023-12-09 15:02:39'),
+(163, 40, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:03:56'),
+(164, 40, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:05:21'),
+(165, 40, 'Take quiz', 1, '2023-12-09 15:05:41'),
+(166, 40, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:07:41'),
+(167, 40, '[view] Reading Comprehension in English', 1, '2023-12-09 15:07:58'),
+(168, 40, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:08:02'),
+(169, 40, 'Take quiz', 1, '2023-12-09 15:08:09'),
+(170, 40, '[view] Reading Comprehension in English', 1, '2023-12-09 15:08:58'),
+(171, 40, '[view] Lesson 2: Common Elements and Themes in Greek Mythology', 1, '2023-12-09 15:09:03'),
+(172, 40, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:09:16'),
+(173, 40, 'logout', 0, '2023-12-09 15:09:48'),
+(174, 31, 'login', 1, '2023-12-09 15:09:53'),
+(175, 31, 'logout', 0, '2023-12-09 15:11:16'),
+(176, 40, 'login', 1, '2023-12-09 15:11:22'),
+(177, 40, '[view] Reading Comprehension in English', 1, '2023-12-09 15:11:40'),
+(178, 40, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:11:44'),
+(179, 40, '[view] Reading Comprehension in English', 1, '2023-12-09 15:12:10'),
+(180, 40, '[view] Lesson 2: Common Elements and Themes in Greek Mythology', 1, '2023-12-09 15:12:12'),
+(181, 40, 'logout', 0, '2023-12-09 15:13:11'),
+(182, 31, 'login', 1, '2023-12-09 15:18:50'),
+(183, 31, 'logout', 0, '2023-12-09 15:19:38'),
+(184, 41, 'login', 1, '2023-12-09 15:19:43'),
+(185, 41, '[view] Reading Comprehension in English', 1, '2023-12-09 15:21:44'),
+(186, 41, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:23:36'),
+(187, 41, 'Take quiz', 1, '2023-12-09 15:23:52'),
+(188, 41, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:27:55'),
+(189, 41, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:28:05'),
+(190, 41, '[view] Reading Comprehension in English', 1, '2023-12-09 15:28:51'),
+(191, 41, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:28:52'),
+(192, 41, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:29:42'),
+(193, 41, 'Take quiz', 1, '2023-12-09 15:29:48'),
+(194, 41, '[view] Reading Comprehension in English', 1, '2023-12-09 15:30:32'),
+(195, 41, '[view] Lesson 2: Common Elements and Themes in Greek Mythology', 1, '2023-12-09 15:30:38'),
+(196, 41, '[view] Lesson 1: Making Generalizations', 1, '2023-12-09 15:31:11'),
+(197, 41, 'Take quiz', 1, '2023-12-09 15:31:16'),
+(198, 41, '[view] Reading Comprehension in English', 1, '2023-12-09 15:31:45');
 
 -- --------------------------------------------------------
 
@@ -163,17 +170,21 @@ CREATE TABLE `lesson_logs` (
 --
 
 INSERT INTO `lesson_logs` (`lesson_logs_id`, `user_id`, `lesson_id`, `isView_value`, `lesson_logs_time`) VALUES
-(4, 36, 3, 1, '2023-12-07 02:49:48'),
-(5, 31, 3, 1, '2023-12-07 08:25:19'),
-(6, 36, 4, 1, '2023-12-07 08:35:22'),
-(7, 36, 4, 1, '2023-12-07 08:52:27'),
-(8, 36, 4, 1, '2023-12-07 08:57:41'),
-(9, 36, 3, 1, '2023-12-07 08:57:53'),
-(10, 36, 3, 1, '2023-12-07 12:55:55'),
-(11, 36, 3, 1, '2023-12-07 12:56:31'),
-(12, 36, 3, 1, '2023-12-07 13:00:27'),
-(13, 36, 3, 1, '2023-12-07 13:51:39'),
-(14, 36, 4, 1, '2023-12-07 13:53:13');
+(48, 40, 3, 1, '2023-12-09 15:03:56'),
+(49, 40, 3, 1, '2023-12-09 15:05:21'),
+(50, 40, 3, 1, '2023-12-09 15:07:41'),
+(51, 40, 3, 1, '2023-12-09 15:08:02'),
+(52, 40, 4, 1, '2023-12-09 15:09:03'),
+(53, 40, 3, 1, '2023-12-09 15:09:16'),
+(54, 40, 3, 1, '2023-12-09 15:11:44'),
+(55, 40, 4, 1, '2023-12-09 15:12:12'),
+(56, 41, 3, 1, '2023-12-09 15:23:36'),
+(57, 41, 3, 1, '2023-12-09 15:27:55'),
+(58, 41, 3, 1, '2023-12-09 15:28:05'),
+(59, 41, 3, 1, '2023-12-09 15:28:52'),
+(60, 41, 3, 1, '2023-12-09 15:29:42'),
+(61, 41, 4, 1, '2023-12-09 15:30:38'),
+(62, 41, 3, 1, '2023-12-09 15:31:11');
 
 -- --------------------------------------------------------
 
@@ -281,16 +292,46 @@ CREATE TABLE `quiz_correct` (
 --
 
 INSERT INTO `quiz_correct` (`quiz_correct_id`, `user_id`, `activity_id`, `quiz_number`, `points`, `use_hint`, `quiz_attempt`, `quiz_correct_date`) VALUES
-(35, 36, 1, 1, 0, 0, 1, '2023-12-07 13:52:36'),
-(36, 36, 1, 2, 0, 0, 1, '2023-12-07 13:52:40'),
-(37, 36, 1, 3, 0, 0, 1, '2023-12-07 13:52:43'),
-(38, 36, 1, 4, 0, 0, 1, '2023-12-07 13:52:48'),
-(39, 36, 1, 5, 0, 0, 1, '2023-12-07 13:52:51'),
-(40, 36, 1, 6, 1, 0, 1, '2023-12-07 13:52:55'),
-(41, 36, 1, 7, 1, 0, 1, '2023-12-07 13:52:59'),
-(42, 36, 1, 8, 0, 0, 1, '2023-12-07 13:53:04'),
-(43, 36, 1, 9, 1, 0, 1, '2023-12-07 13:53:06'),
-(44, 36, 1, 10, 1, 0, 1, '2023-12-07 13:53:08');
+(105, 40, 1, 1, 0, 0, 1, '2023-12-09 15:05:53'),
+(106, 40, 1, 2, 0, 0, 1, '2023-12-09 15:05:59'),
+(107, 40, 1, 3, 0, 1, 1, '2023-12-09 15:06:37'),
+(108, 40, 1, 4, 1, 0, 1, '2023-12-09 15:06:41'),
+(109, 40, 1, 5, 1, 0, 1, '2023-12-09 15:06:43'),
+(110, 40, 1, 6, 0, 0, 1, '2023-12-09 15:06:48'),
+(111, 40, 1, 7, 0, 0, 1, '2023-12-09 15:06:54'),
+(112, 40, 1, 8, 0, 0, 1, '2023-12-09 15:06:58'),
+(113, 40, 1, 9, 0, 0, 1, '2023-12-09 15:07:02'),
+(114, 40, 1, 10, 1, 0, 1, '2023-12-09 15:07:05'),
+(115, 40, 1, 1, 1, 0, 2, '2023-12-09 15:08:13'),
+(116, 40, 1, 2, 1, 0, 2, '2023-12-09 15:08:16'),
+(117, 40, 1, 3, 1, 0, 2, '2023-12-09 15:08:19'),
+(118, 40, 1, 4, 0, 0, 2, '2023-12-09 15:08:24'),
+(119, 40, 1, 5, 1, 0, 2, '2023-12-09 15:08:27'),
+(120, 40, 1, 6, 1, 0, 2, '2023-12-09 15:08:32'),
+(121, 40, 1, 7, 1, 0, 2, '2023-12-09 15:08:34'),
+(122, 40, 1, 8, 0, 0, 2, '2023-12-09 15:08:38'),
+(123, 40, 1, 9, 1, 0, 2, '2023-12-09 15:08:42'),
+(124, 40, 1, 10, 1, 0, 2, '2023-12-09 15:08:44'),
+(125, 41, 1, 1, 0, 0, 1, '2023-12-09 15:26:40'),
+(126, 41, 1, 2, 1, 0, 1, '2023-12-09 15:26:43'),
+(127, 41, 1, 3, 0, 0, 1, '2023-12-09 15:26:56'),
+(128, 41, 1, 4, 1, 0, 1, '2023-12-09 15:26:59'),
+(129, 41, 1, 5, 0, 0, 1, '2023-12-09 15:27:13'),
+(130, 41, 1, 6, 0, 0, 1, '2023-12-09 15:27:21'),
+(131, 41, 1, 7, 0, 0, 1, '2023-12-09 15:27:26'),
+(132, 41, 1, 8, 1, 0, 1, '2023-12-09 15:27:29'),
+(133, 41, 1, 9, 0, 0, 1, '2023-12-09 15:27:33'),
+(134, 41, 1, 10, 1, 0, 1, '2023-12-09 15:27:36'),
+(135, 41, 1, 1, 1, 0, 2, '2023-12-09 15:29:50'),
+(136, 41, 1, 2, 1, 0, 2, '2023-12-09 15:29:53'),
+(137, 41, 1, 3, 1, 0, 2, '2023-12-09 15:29:55'),
+(138, 41, 1, 4, 1, 0, 2, '2023-12-09 15:29:58'),
+(139, 41, 1, 5, 1, 0, 2, '2023-12-09 15:30:01'),
+(140, 41, 1, 6, 1, 0, 2, '2023-12-09 15:30:07'),
+(141, 41, 1, 7, 1, 0, 2, '2023-12-09 15:30:11'),
+(142, 41, 1, 8, 1, 0, 2, '2023-12-09 15:30:13'),
+(143, 41, 1, 9, 1, 0, 2, '2023-12-09 15:30:16'),
+(144, 41, 1, 10, 1, 0, 2, '2023-12-09 15:30:19');
 
 -- --------------------------------------------------------
 
@@ -311,7 +352,11 @@ CREATE TABLE `quiz_logs` (
 --
 
 INSERT INTO `quiz_logs` (`quiz_logs_id`, `user_id`, `activity_id`, `status`, `qlogs_date`) VALUES
-(6, 36, 1, 1, '2023-12-07 13:52:32');
+(16, 40, 1, 1, '2023-12-09 15:05:41'),
+(17, 40, 1, 1, '2023-12-09 15:08:09'),
+(18, 41, 1, 1, '2023-12-09 15:23:52'),
+(19, 41, 1, 1, '2023-12-09 15:29:48'),
+(20, 41, 1, 1, '2023-12-09 15:31:16');
 
 -- --------------------------------------------------------
 
@@ -335,13 +380,29 @@ CREATE TABLE `quiz_mistakes` (
 --
 
 INSERT INTO `quiz_mistakes` (`quiz_mistake_id`, `user_id`, `activity_id`, `quiz_id`, `answer_input`, `mistakes`, `quiz_attempt`, `quiz_mistakes_date`) VALUES
-(21, 36, 1, 1, 'Reckless people are the main cause of the world’s environmental problems.', 1, 1, '2023-12-07 13:52:34'),
-(22, 36, 1, 2, 'Heroic people risk their lives to save others.', 1, 1, '2023-12-07 13:52:39'),
-(23, 36, 1, 3, 'Women play vital roles that men can never do.', 1, 1, '2023-12-07 13:52:42'),
-(24, 36, 1, 4, 'This virus can be transmitted through droplets generated when an infected person coughs, sneezes, or exhales', 1, 1, '2023-12-07 13:52:45'),
-(25, 36, 1, 4, 'Most people who fall ill due to COVID-19 experience mild to moderate symptoms and recover without special treatment.', 1, 1, '2023-12-07 13:52:47'),
-(26, 36, 1, 5, 'Spaniel is a six-month old puppy.', 1, 1, '2023-12-07 13:52:50'),
-(27, 36, 1, 8, 'The speaker is expressing his/her own opinions.', 1, 1, '2023-12-07 13:53:01');
+(60, 40, 1, 1, 'Reckless people are the main cause of the world’s environmental problems.', 1, 1, '2023-12-09 15:05:51'),
+(61, 40, 1, 2, 'Only those who are exceptionally brave among people can fight against injustice.', 1, 1, '2023-12-09 15:05:56'),
+(62, 40, 1, 3, 'Women play vital roles that men can never do.', 1, 1, '2023-12-09 15:06:02'),
+(63, 40, 1, 3, 'Women play vital roles that men can never do.', 1, 1, '2023-12-09 15:06:25'),
+(64, 40, 1, 3, 'One’s value is not defined by his/her gender.', 1, 1, '2023-12-09 15:06:27'),
+(65, 40, 1, 6, 'The author expresses her own opinions.', 1, 1, '2023-12-09 15:06:46'),
+(66, 40, 1, 7, 'We make valid generalization by not supporting it with facts.', 1, 1, '2023-12-09 15:06:51'),
+(67, 40, 1, 8, 'The speaker uses logic and reasoning.', 1, 1, '2023-12-09 15:06:56'),
+(68, 40, 1, 9, 'Early man put on animal skins and hung strings of beads and stones around his neck.', 1, 1, '2023-12-09 15:07:00'),
+(69, 40, 1, 4, 'Most people who fall ill due to COVID-19 experience mild to moderate symptoms and recover without special treatment.', 1, 2, '2023-12-09 15:08:23'),
+(70, 40, 1, 8, 'The speaker uses logic and reasoning.', 1, 2, '2023-12-09 15:08:37'),
+(71, 41, 1, 1, 'Reckless people are the main cause of the world’s environmental problems.', 1, 1, '2023-12-09 15:26:18'),
+(72, 41, 1, 1, 'The worst environmental problems that we encounter in this generation are mainly brought by our selfish decision and careless actions.', 1, 1, '2023-12-09 15:26:20'),
+(73, 41, 1, 3, 'Men have strengths that women don’t have.', 1, 1, '2023-12-09 15:26:49'),
+(74, 41, 1, 3, 'Women play vital roles that men can never do.', 1, 1, '2023-12-09 15:26:53'),
+(75, 41, 1, 5, 'Spaniel is a six-month old puppy.', 1, 1, '2023-12-09 15:27:02'),
+(76, 41, 1, 5, 'Spaniel is a breed originally intended to hunt birds in England.', 1, 1, '2023-12-09 15:27:05'),
+(77, 41, 1, 6, 'The author expresses her own opinions.', 1, 1, '2023-12-09 15:27:17'),
+(78, 41, 1, 6, 'The author supports it by facts.', 1, 1, '2023-12-09 15:27:20'),
+(79, 41, 1, 7, 'We make valid generalization by using different key words.', 1, 1, '2023-12-09 15:27:24'),
+(80, 41, 1, 9, 'Early man put on animal skins and hung strings of beads and stones around his neck.', 1, 1, '2023-12-09 15:27:31'),
+(81, 41, 1, 1, 'Reckless people are the main cause of the world’s environmental problems.', 1, 3, '2023-12-09 15:31:19'),
+(82, 41, 1, 1, 'The truth is humans are greatly affected by the consequences of our own wrong doings.', 1, 3, '2023-12-09 15:31:20');
 
 -- --------------------------------------------------------
 
@@ -353,6 +414,7 @@ CREATE TABLE `quiz_results` (
   `quiz_result_id` int(11) NOT NULL,
   `user_id` int(100) NOT NULL,
   `activity_id` int(100) NOT NULL,
+  `lesson_id` int(100) NOT NULL,
   `total_mistakes` int(100) NOT NULL,
   `total_hints` int(100) NOT NULL,
   `final_scores` int(100) NOT NULL,
@@ -365,8 +427,11 @@ CREATE TABLE `quiz_results` (
 -- Dumping data for table `quiz_results`
 --
 
-INSERT INTO `quiz_results` (`quiz_result_id`, `user_id`, `activity_id`, `total_mistakes`, `total_hints`, `final_scores`, `is_passed`, `quiz_attempt`, `date_saved`) VALUES
-(2, 36, 1, 7, 0, 4, 0, 1, '2023-12-07 13:53:09');
+INSERT INTO `quiz_results` (`quiz_result_id`, `user_id`, `activity_id`, `lesson_id`, `total_mistakes`, `total_hints`, `final_scores`, `is_passed`, `quiz_attempt`, `date_saved`) VALUES
+(9, 40, 1, 3, 9, 1, 3, 0, 1, '2023-12-09 15:07:08'),
+(10, 40, 1, 3, 2, 0, 8, 1, 2, '2023-12-09 15:08:45'),
+(11, 41, 1, 3, 10, 0, 4, 0, 1, '2023-12-09 15:27:38'),
+(12, 41, 1, 3, 0, 0, 10, 1, 2, '2023-12-09 15:30:20');
 
 -- --------------------------------------------------------
 
@@ -438,7 +503,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`user_id`, `firstname`, `lastname`, `role`, `Birthday`, `gender`, `age`, `address`, `user_status`, `profile_picture`, `email_address`, `username`, `password`, `date_added`) VALUES
 (13, 'Admin', 'Admin', 3, NULL, 'Rather not say', NULL, NULL, '', NULL, 'admin@admin', 'superadmin', '$2y$10$roxFOISnB2mMuh80FGpfCOJvzj53fPHd23A8f6a9ZqiAI571DePCe', '2023-10-29 07:58:19'),
 (31, 'Admin', 'Admin', 1, '2000-09-26', 'Male', 23, NULL, '', NULL, 'admin@yahoo.com', 'admin', '$2y$10$2k2D6oby2vIqjBAA0QBxQOSdH1fVTu3X0Wlm18n5NuCi.ir4JEUGe', '2023-10-29 08:03:18'),
-(36, 'Lebron James', 'Delos Baynte', 2, '1983-01-17', 'Male', 40, NULL, 'Approved', NULL, 'user@elearning.com', 'user', '$2y$10$.fYTd.9DI1oKxkLQU/Rwlefz4sbL8J0YyxZM11Cz.cIbMqZoL1fve', '2023-11-06 13:19:09');
+(40, 'Tester', 'Tester', 2, '2013-02-05', 'Male', 10, NULL, 'Approved', NULL, 'tester@gmail.com', 'tester', '$2y$10$7UXofV8fFh/7d41hehsKjea3vm2fkmMupvOgcXOyPaBDGhXlazUoe', '2023-12-09 15:00:49'),
+(41, 'Learner', 'Kotlin', 2, '2015-02-09', 'Male', 8, NULL, 'Approved', NULL, 'testing@testing', 'tt', '$2y$10$gQF2B5/XMad.A9fXhTJA2uhCU3wzzqK3Z2XiktUXwt24AzbPyhONO', '2023-12-09 15:19:33');
 
 --
 -- Indexes for dumped tables
@@ -542,7 +608,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `action_logs`
 --
 ALTER TABLE `action_logs`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=199;
 
 --
 -- AUTO_INCREMENT for table `activity`
@@ -566,7 +632,7 @@ ALTER TABLE `lesson_content`
 -- AUTO_INCREMENT for table `lesson_logs`
 --
 ALTER TABLE `lesson_logs`
-  MODIFY `lesson_logs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `lesson_logs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `lesson_pdf`
@@ -590,25 +656,25 @@ ALTER TABLE `quiz`
 -- AUTO_INCREMENT for table `quiz_correct`
 --
 ALTER TABLE `quiz_correct`
-  MODIFY `quiz_correct_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `quiz_correct_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=145;
 
 --
 -- AUTO_INCREMENT for table `quiz_logs`
 --
 ALTER TABLE `quiz_logs`
-  MODIFY `quiz_logs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `quiz_logs_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `quiz_mistakes`
 --
 ALTER TABLE `quiz_mistakes`
-  MODIFY `quiz_mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `quiz_mistake_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `quiz_results`
 --
 ALTER TABLE `quiz_results`
-  MODIFY `quiz_result_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `quiz_result_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -626,7 +692,7 @@ ALTER TABLE `subject`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

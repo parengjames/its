@@ -58,35 +58,72 @@
                                             </td>
                                             <td>
                                                 <?php
-                                                if ($row['lesson_status'] == "Partial") {
+
+                                                $sqlquery2 = mysqli_query($con, "SELECT MIN(lesson_id) AS first_lesson FROM `lesson`");
+                                                $sqlresult2 = mysqli_num_rows($sqlquery2);
+                                                if ($sqlresult2 > 0) {
+                                                    while ($row2 = mysqli_fetch_assoc($sqlquery2)) {
+                                                        $first_lesson = $row2['first_lesson'];
+                                                    }
+                                                }
+
+                                                if ($row['lesson_status'] == "Partial" || $row['lesson_status'] == "Unavailable") {
                                                 ?>
                                                     <a onclick="partial()" style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" class="btn btn-secondary">
                                                         <i class="ti-alert"></i> READ
                                                     </a>
-                                                <?php
+                                                    <?php
                                                 } else if ($row['lesson_status'] == "Available") {
-                                                ?>
-                                                    <a style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" href="actions/log.php?lesson=<?php echo $row['lesson_id'] ?>&name=<?php echo $row['lesson_title'] ?>" class="btn btn-primary">
-                                                        <i class="ti-write"></i> READ
-                                                    </a>
-                                                <?php
-                                                } else if ($incrementid) {
-                                                    if(isset($_SESSION['activity_id_from_results'])){
-                                                        
-                                                    }else{
 
+                                                    if ($row['lesson_id'] == $first_lesson) {
+                                                    ?>
+                                                        <a style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" href="actions/log.php?lesson=<?php echo $row['lesson_id'] ?>&name=<?php echo $row['lesson_title'] ?>" class="btn btn-primary">
+                                                            <i class="ti-write"></i> READ
+                                                        </a>
+                                                        <?php
                                                     }
-                                                    $sqlquery = mysqli_query($con,"SELECT * FROM quiz_results WHERE `user_id` = $user_id AND `activity_id`=")
-                                                ?>
-                                                    <a onclick="unavailable()" style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" class="btn btn-warning">
-                                                        <i class="ti-alert"></i> READ
-                                                    </a>
+
+                                                    if ($row['lesson_id'] > $first_lesson) {
+
+                                                        if (isset($_SESSION['activity_id_from_results'])) {
+                                                            $actibiti = $_SESSION['activity_id_from_results'];
+                                                        } else {
+                                                            $actibiti = 1;
+                                                        }
+                                                        $sqlquery3 = mysqli_query($con, "SELECT is_passed FROM `quiz_results` 
+                                                        WHERE user_id = $user_id AND activity_id = $actibiti
+                                                        ORDER BY quiz_result_id DESC
+                                                        LIMIT 1");
+                                                        $result3 = mysqli_num_rows($sqlquery3);
+                                                        if ($result3 > 0) {
+                                                            while ($row3 = mysqli_fetch_assoc($sqlquery3)) {
+                                                                $pasar_wala = $row3['is_passed'];
+
+                                                                if ($pasar_wala == 1) {
+                                                        ?>
+                                                                    <a style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" href="actions/log.php?lesson=<?php echo $row['lesson_id'] ?>&name=<?php echo $row['lesson_title'] ?>" class="btn btn-primary">
+                                                                        <i class="ti-write"></i> READ
+                                                                    </a>
+                                                                <?php
+
+                                                                } else {
+                                                                ?>
+                                                                    <a onclick="unavailable()" style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" class="btn btn-warning">
+                                                                        <i class="ti-alert"></i> READ
+                                                                    </a>
+                                                            <?php
+                                                                }
+                                                            }
+                                                        } else {
+                                                            ?>
+                                                            <a onclick="unavailable()" style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" class="btn btn-warning">
+                                                                <i class="ti-alert"></i> READ
+                                                            </a>
                                                 <?php
+                                                        }
+                                                    }
                                                 }
                                                 ?>
-                                                <!-- <a style="font-size: 15px;padding: 10px 10px;border-radius: 10px;" href="actions/log.php?lesson=<?php echo $row['lesson_id'] ?>&name=<?php echo $row['lesson_title'] ?>" class="btn btn-primary">
-                                                    <i class="ti-write"></i> READ
-                                                </a> -->
                                             </td>
                                         </tr>
                             <?php
@@ -119,7 +156,7 @@
     function unavailable() {
         swal({
             title: "Lesson status",
-            text: "You need to complete the lesson 1.",
+            text: "You need to pass and complete the lesson 1.",
             icon: "info",
             button: "OK",
         });

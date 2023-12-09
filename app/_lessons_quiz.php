@@ -165,7 +165,7 @@ if (isset($_GET['wrong'])) {
                     $_SESSION['wrong_attempts'] = $attempted_wrong;
                     ?>
                     <?php
-                    if ($attempted_wrong >= 3) {
+                    if ($attempted_wrong >= 2) {
                     ?>
                         <button data-target="#hint_checkpoint" data-toggle="modal" id="hint" class="btn btn-warning float-right">
                             <i class="ti-light-bulb"></i>Hint
@@ -302,7 +302,7 @@ if (isset($_GET['wrong'])) {
                     <p>1. The student should choose the correct answer to proceed to the next question.</p>
                     <p>2. The student cannot go back to previous questions.</p>
                     <p>3. The student will have assistance in times of difficulties.</p>
-                    <p>4. Hint will appear if the student get 3 consecutive mistakes</p>
+                    <p>4. Hint will appear if the student get 2 consecutive mistakes</p>
                     <br>
                     <p>Score criteria:</p>
                     <p>1. correct answer in 1st attempt is 1 points</p>
